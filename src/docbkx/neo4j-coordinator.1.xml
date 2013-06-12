@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>NEO4J-COORDINATOR(1)</title>
+    <author>
+        <firstname>The</firstname>
+        <othername>Neo4j</othername>
+        <surname>Team</surname>
+    </author>
+    <authorinitials>TNT</authorinitials>
+</refentryinfo>
+<refmeta>
+<refentrytitle>neo4j-coordinator</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>neo4j-coordinator</refname>
+    <refpurpose>Neo4j Coordinator for High-Availability clusters</refpurpose>
+</refnamediv>
+<refsynopsisdiv id="neo4j-manpage">
+<simpara><emphasis role="strong">neo4j-coordinator</emphasis> &lt;command&gt;</simpara>
+</refsynopsisdiv>
+<refsect1 id="neo4j-manpage-description">
+<title>DESCRIPTION</title>
+<simpara>The Coordinator functionality and corresponding scripts are no longer required for Neo4j HA operations since version 1.9.</simpara>
+</refsect1>
+</refentry>

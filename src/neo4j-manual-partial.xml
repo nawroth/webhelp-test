@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<book lang="en">
+<bookinfo>
+<mediaobject>
+  <imageobject>
+    <imagedata fileref="images/front-cover.svg"/>
+  </imageobject>
+</mediaobject>
+    <title>The Neo4j Manual v1.9-SNAPSHOT</title>
+<!--
+
+    Copyright (c) 2002-2013 "Neo Technology,"
+    Network Engine for Objects in Lund AB [http://neotechnology.com]
+
+    This file is part of Neo4j.
+
+    Neo4j is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<authorgroup>
+  <corpauthor>The Neo4j Team
+    <ulink url="http://neo4j.org/"><citetitle>neo4j.org</citetitle></ulink>
+    <ulink url="http://www.neotechnology.com/"><citetitle>www.neotechnology.com</citetitle></ulink>
+  </corpauthor>
+</authorgroup>
+
+<copyright>
+  <year>2013</year>
+  <holder>Neo Technology</holder>
+</copyright>
+
+<abstract>
+  <title>Starting points</title>
+  <para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <link linkend="what-is-a-graphdb">What is a graph database?</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="cypher-query-lang">Cypher Query Language</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="tutorials-java-embedded">Using Neo4j embedded in Java applications</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="languages">Languages / Remote Client Libraries</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="server">Neo4j Server</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="rest-api">REST API</link>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </para>
+</abstract>
+
+<legalnotice>
+  <title>License: Creative Commons 3.0</title>
+  <simpara>This book is presented in open source and licensed through
+    Creative Commons 3.0.
+    You are free to copy, distribute, transmit,
+    and/or adapt the work.
+    This license is based upon the following
+    conditions:</simpara>
+  <formalpara>
+    <title>Attribution</title>
+    <para>You must attribute the work in the manner specified by the
+      author or licensor (but not in any way that suggests that they
+      endorse you or your use of the work).</para>
+  </formalpara>
+  <formalpara>
+    <title>Share Alike</title>
+    <para>If you alter, transform, or build upon this work, you may
+      distribute the resulting work only under the same, similar or a
+      compatible license.</para>
+  </formalpara>
+  <simpara>Any of the above conditions can be waived if you get
+    permission from the copyright holder.</simpara>
+  <simpara>In no way are any of the following rights affected by the
+    license:</simpara>
+  <itemizedlist>
+    <listitem>
+      <simpara>
+        Your fair dealing or fair use rights
+      </simpara>
+    </listitem>
+    <listitem>
+      <simpara>
+        The author&#8217;s moral rights
+      </simpara>
+    </listitem>
+    <listitem>
+      <simpara>
+        Rights other persons may have either in the work itself
+        or in how the
+        work is used, such as publicity or privacy rights
+      </simpara>
+    </listitem>
+  </itemizedlist>
+  <note>
+    <simpara>
+      For any reuse or distribution, you must make clear to the others
+      the license terms of this work. The best way to do this is with a
+      direct link to this page:
+      <ulink url="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/
+      </ulink>
+    </simpara>
+  </note>
+</legalnotice>
+
+<pubdate><?dbtimestamp format="Y-m-d H:M:S"?></pubdate>
+</bookinfo>
+<preface id="preface">
+<title>Preface</title>
+<simpara>This is the reference manual for Neo4j version 1.9-SNAPSHOT, authored by the Neo4j Team.</simpara>
+<simpara>The main parts of the manual are:</simpara>
+<simpara>The material is practical, technical, and focused on answering specific questions.
+It addresses how things work, what to do and what to avoid to successfully run Neo4j in a production environment.</simpara>
+<simpara>The goal is to be thumb-through and rule-of-thumb friendly.</simpara>
+<simpara>Each section should stand on its own, so you can hop right to whatever interests you.
+When possible, the sections distill &#8220;rules of thumb&#8221; which you can keep in mind whenever you wander out of the house without this manual in your back pocket.</simpara>
+<simpara>The included code examples are executed when Neo4j is built and tested.
+Also, the REST API request and response examples are captured from real interaction with a Neo4j server.
+Thus, the examples are always in sync with how Neo4j actually works.</simpara>
+<simpara><emphasis>Who should read this?</emphasis></simpara>
+<simpara>The topics should be relevant to architects, administrators, developers and operations personnel.</simpara>
+</preface>
+<part id="introduction">
+<title>Introduction</title>
+<partintro>
+<simpara>This part gives a bird&#8217;s eye view of what a graph database is, and then outlines some specifics of Neo4j.</simpara>
+</partintro>
+<chapter id="introduction-highlights">
+<title>Neo4j Highlights</title>
+<simpara>As a robust, scalable and high-performance database, Neo4j is suitable for full enterprise deployment or a subset of the full server can be used in lightweight projects.</simpara>
+<simpara>It features:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+true ACID transactions,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+high availability,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+scales to billions of nodes and relationships,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+high speed querying through traversals,
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+declarative graph query language.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Proper ACID behavior is the foundation of data reliability.
+Neo4j enforces that all operations that modify data occur within a transaction, guaranteeing consistent data.
+This robustness extends from single instance embedded graphs to multi-server high availability installations.
+For details, see transactions.</simpara>
+<simpara>Reliable graph storage can easily be added to any application.
+A graph can scale in size and complexity as the application evolves, with little impact on performance.
+Whether starting new development, or augmenting existing functionality, Neo4j is only limited by physical hardware.</simpara>
+<simpara>A single server instance can handle a graph of billions of nodes and relationships.
+When data throughput is insufficient, the graph database can be distributed among multiple servers in a high availability configuration.
+See HA to learn more.</simpara>
+<simpara>The graph database storage shines when storing richly-connected data.
+Querying is performed through traversals, which can perform millions of traversal steps per second.
+A traversal step resembles a <emphasis>join</emphasis> in a RDBMS.</simpara>
+</chapter>
+</part>
+</book>
