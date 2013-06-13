@@ -58,6 +58,7 @@
         </executions>
         <configuration>
           <includes>neo4j-manual-html.xml</includes>
+          <xincludeSupported>true</xincludeSupported>
           <webhelpCustomization>conf/webhelp-offline.xsl</webhelpCustomization>
           <glossarySort>true</glossarySort>
           <tocMaxDepth>2</tocMaxDepth>
@@ -120,6 +121,11 @@
                 <resource>
                   <directory>${project.basedir}/src/docbkx/images</directory>
                   <targetPath>${project.build.directory}/docbkx/webhelp/neo4j-manual-html/images</targetPath>
+                  <preservePath>true</preservePath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/common</directory>
+                  <targetPath>${project.build.directory}/docbkx/webhelp/neo4j-manual-html/common</targetPath>
                   <preservePath>true</preservePath>
                 </resource>
               </resources>
