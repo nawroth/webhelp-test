@@ -193,8 +193,8 @@ function doSearch() {
 /**
  * Synchronize with the tableOfContents
  */
-function syncToc(li_) {
-	var a = li_;
+function syncToc(a_) {
+	var a = a_.parentNode.parentNode;
 	if (a === undefined) {
 		return;
 	}
