@@ -194,6 +194,9 @@ function doSearch() {
  * Synchronize with the tableOfContents
  */
 function syncToc(a_) {
+  if (a_ === undefined) {
+    return;
+  }
 	var a = a_.parentNode.parentNode;
 	if (a === undefined) {
 		return;
