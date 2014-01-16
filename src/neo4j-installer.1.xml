@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>NEO4J-INSTALLER(1)</title>
+    <author>
+        <firstname>The</firstname>
+        <othername>Neo4j</othername>
+        <surname>Team</surname>
+    </author>
+    <authorinitials>TNT</authorinitials>
+</refentryinfo>
+<refmeta>
+<refentrytitle>neo4j-installer</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>neo4j-installer</refname>
+    <refpurpose>Neo4j Server installation and removal</refpurpose>
+</refnamediv>
+<refsynopsisdiv id="neo4j-installer-manpage">
+<simpara><emphasis role="strong">neo4j-installer</emphasis> &lt;command&gt;</simpara>
+</refsynopsisdiv>
+<refsect1 id="neo4j-installer-manpage-description">
+<title>DESCRIPTION</title>
+<simpara>Neo4j is a graph database, perfect for working with highly connected data.</simpara>
+<simpara>The preferred way to install Neo4j on Linux systems is by using prebuilt installation packages, but there&#8217;s also the possibility to use the <literal>neo4j-installer</literal> command to install or remove it as a system service.
+For information regarding Windows, see below.</simpara>
+<simpara>Use the <literal>neo4j</literal> command to control the Neo4j Server.</simpara>
+</refsect1>
+<refsect1 id="neo4j-installer-manpage-commands">
+<title>COMMANDS</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">install</emphasis>
+</term>
+<listitem>
+<simpara>
+  Installs the server as a platform-appropriate system service.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">remove</emphasis>
+</term>
+<listitem>
+<simpara>
+  Uninstalls the system service.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="neo4j-installer-manpage-usage-windows">
+<title>Usage - Windows</title>
+<simpara>To just control the Neo4j Server, use the <literal>Neo4j.bat</literal> command.</simpara>
+<simpara><emphasis role="strong">Neo4jInstaller.bat install/remove</emphasis></simpara>
+<simpara>Neo4j can be installed and run as a Windows Service, running without a console
+window. You&#8217;ll need to run the scripts with Administrator privileges.
+Just use the <literal>Neo4jInstaller.bat</literal> script with the proper argument:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Neo4jInstaller.bat install - install as a Windows service
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+will install the service
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Neo4jInstaller.bat remove - remove the Neo4j service
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+will stop and remove the Neo4j service
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</refsect1>
+<refsect1 id="neo4j-installer-manpage-files">
+<title>FILES</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">conf/neo4j-server.properties</emphasis>
+</term>
+<listitem>
+<simpara>
+  Server configuration.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">conf/neo4j-wrapper.conf</emphasis>
+</term>
+<listitem>
+<simpara>
+  Configuration for service wrapper.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">conf/neo4j.properties</emphasis>
+</term>
+<listitem>
+<simpara>
+  Tuning configuration for the database.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+</refentry>
