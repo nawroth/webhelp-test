@@ -65,7 +65,7 @@ function initialize() {
 			}
 		});
 	}
-
+/* works better without this.
 	// When you click on a link to an
 	// anchor, scroll down
 	// 105 px to cope with the fact that the
@@ -93,7 +93,7 @@ function initialize() {
 							}
 						}
 					});
-
+*/
 	// $("#showHideHighlight").button();
 	// //add jquery button styling to 'Go'
 	// button

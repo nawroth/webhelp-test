@@ -127,35 +127,35 @@
 <polygon fill="#2e3436" stroke="#2e3436" points="307.792,-194.783 300.99,-199.405 304.186,-195.924 300.492,-196.573 300.406,-196.081 300.319,-195.588 304.012,-194.939 299.822,-192.757 307.792,-194.783 307.792,-194.783"/>
 <text text-anchor="middle" x="221" y="-225" font-family="FreeSans" font-size="10.00" fill="#1c2021">where to go next</text>
 </g>
-<!-- Expander -->
-<g id="node8" class="node"><title>Expander</title>
-<polygon fill="#fadcad" stroke="#fadcad" stroke-width="1.5" points="664,-288 632,-288 620,-276 620,-264 632,-252 664,-252 676,-264 676,-276 664,-288"/>
-<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M632,-288C626,-288 620,-282 620,-276"/>
-<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M620,-264C620,-258 626,-252 632,-252"/>
-<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M664,-252C670,-252 676,-258 676,-264"/>
-<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M676,-276C676,-282 670,-288 664,-288"/>
-<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="664,-288 632,-288 "/>
-<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M632,-288C626,-288 620,-282 620,-276"/>
-<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="620,-276 620,-264 "/>
-<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M620,-264C620,-258 626,-252 632,-252"/>
-<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="632,-252 664,-252 "/>
-<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M664,-252C670,-252 676,-258 676,-264"/>
-<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="676,-264 676,-276 "/>
-<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M676,-276C676,-282 670,-288 664,-288"/>
-<text text-anchor="middle" x="648" y="-267" font-family="FreeSans" font-size="10.00" fill="#1c2021">Expander</text>
+<!-- PathExpander -->
+<g id="node8" class="node"><title>PathExpander</title>
+<polygon fill="#fadcad" stroke="#fadcad" stroke-width="1.5" points="674,-288 622,-288 610,-276 610,-264 622,-252 674,-252 686,-264 686,-276 674,-288"/>
+<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M622,-288C616,-288 610,-282 610,-276"/>
+<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M610,-264C610,-258 616,-252 622,-252"/>
+<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M674,-252C680,-252 686,-258 686,-264"/>
+<path fill="#fadcad" stroke="#fadcad" stroke-width="1.5" d="M686,-276C686,-282 680,-288 674,-288"/>
+<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="674,-288 622,-288 "/>
+<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M622,-288C616,-288 610,-282 610,-276"/>
+<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="610,-276 610,-264 "/>
+<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M610,-264C610,-258 616,-252 622,-252"/>
+<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="622,-252 674,-252 "/>
+<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M674,-252C680,-252 686,-258 686,-264"/>
+<polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="686,-264 686,-276 "/>
+<path fill="none" stroke="#2e3436" stroke-width="1.5" d="M686,-276C686,-282 680,-288 674,-288"/>
+<text text-anchor="middle" x="648" y="-267" font-family="FreeSans" font-size="10.00" fill="#1c2021">PathExpander</text>
 </g>
-<!-- Expander&#45;&gt;Traversal Description -->
-<g id="edge8" class="edge"><title>Expander&#45;&gt;Traversal Description</title>
-<path fill="none" stroke="#2e3436" stroke-width="2" d="M619.959,-261.793C574.214,-248.404 482.519,-221.566 421.44,-203.69"/>
-<polygon fill="#2e3436" stroke="#2e3436" points="414.148,-201.556 422.294,-200.423 417.888,-202.129 421.487,-203.182 421.346,-203.662 421.206,-204.142 417.607,-203.089 420.398,-206.901 414.148,-201.556 414.148,-201.556"/>
+<!-- PathExpander&#45;&gt;Traversal Description -->
+<g id="edge8" class="edge"><title>PathExpander&#45;&gt;Traversal Description</title>
+<path fill="none" stroke="#2e3436" stroke-width="2" d="M609.889,-258.845C561.805,-244.772 478.539,-220.402 421.668,-203.756"/>
+<polygon fill="#2e3436" stroke="#2e3436" points="414.173,-201.563 422.319,-200.431 417.912,-202.136 421.511,-203.19 421.371,-203.67 421.231,-204.149 417.632,-203.096 420.423,-206.909 414.173,-201.563 414.173,-201.563"/>
 <text text-anchor="middle" x="555.5" y="-225" font-family="FreeSans" font-size="10.00" fill="#1c2021">what to traverse</text>
 </g>
 <!-- Relationship Type -->
 <g id="node12" class="node"><title>Relationship Type</title>
 <text text-anchor="middle" x="648" y="-183" font-family="FreeSans" font-size="10.00" fill="#1c2021">Relationship Type</text>
 </g>
-<!-- Expander&#45;&gt;Relationship Type -->
-<g id="edge14" class="edge"><title>Expander&#45;&gt;Relationship Type</title>
+<!-- PathExpander&#45;&gt;Relationship Type -->
+<g id="edge14" class="edge"><title>PathExpander&#45;&gt;Relationship Type</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M648,-251.773C648,-236.589 648,-215.223 648,-201.011"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="648,-193.205 651.375,-200.705 648.5,-196.955 648.5,-200.705 648,-200.705 647.5,-200.705 647.5,-196.955 644.625,-200.705 648,-193.205 648,-193.205"/>
 </g>
@@ -181,8 +181,8 @@
 <g id="node13" class="node"><title>Direction</title>
 <text text-anchor="middle" x="668" y="-330" font-family="FreeSans" font-size="10.00" fill="#1c2021">Direction</text>
 </g>
-<!-- Direction&#45;&gt;Expander -->
-<g id="edge16" class="edge"><title>Direction&#45;&gt;Expander</title>
+<!-- Direction&#45;&gt;PathExpander -->
+<g id="edge16" class="edge"><title>Direction&#45;&gt;PathExpander</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M663.354,-318.364C660.493,-309.352 656.803,-297.728 653.757,-288.135"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="665.706,-325.773 660.22,-319.646 664.094,-322.35 662.96,-318.776 663.436,-318.625 663.913,-318.473 665.048,-322.048 666.653,-317.603 665.706,-325.773 665.706,-325.773"/>
 </g>
