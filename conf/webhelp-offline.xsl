@@ -3,6 +3,10 @@
 
   <xsl:import href="urn:docbkx:stylesheet" />
 
+  <xsl:import href="common.xsl"/>
+  <!--  <xsl:import href="html-params.xsl"/> <xsl:import href="head-offline.xsl"/> 
+    <xsl:import href="syntaxhighlight.xsl"/> <xsl:import href="offline-footer.xsl"/> -->
+
   <xsl:template match="d:formalpara[@role = 'cypherconsole']" />
   <xsl:template match="d:simpara[@role = 'cypherconsole']" />
 
@@ -53,6 +57,7 @@
     match="d:book|d:part|d:reference|d:preface|d:chapter|d:bibliography|d:appendix|d:article|d:topic|d:glossary|d:section|d:simplesect|d:sect1|d:sect2|d:sect3|d:sect4|d:sect5|d:refentry|d:colophon|d:bibliodiv|d:index|d:setindex"
     mode="webhelptoc">
     <xsl:param name="currentid" />
+    <xsl:param name="level" select="0" />
     <xsl:variable name="title">
       <xsl:if test="$webhelp.autolabel=1">
         <xsl:variable name="label.markup">
@@ -87,12 +92,13 @@
           </a>
         </span>
         <xsl:if
-          test="d:part|d:reference|d:preface|d:chapter|d:bibliography|d:appendix|d:article|d:topic|d:glossary|d:section|d:simplesect|d:sect1|d:sect2|d:sect3|d:sect4|d:sect5|d:refentry|d:colophon|d:bibliodiv">
+          test="$level &lt; 2 and (d:part|d:reference|d:preface|d:chapter|d:bibliography|d:appendix|d:article|d:topic|d:glossary|d:section|d:simplesect|d:sect1|d:sect2|d:sect3|d:sect4|d:sect5|d:refentry|d:colophon|d:bibliodiv)">
           <ul>
             <xsl:apply-templates
               select="d:part|d:reference|d:preface|d:chapter|d:bibliography|d:appendix|d:article|d:topic|d:glossary|d:section|d:simplesect|d:sect1|d:sect2|d:sect3|d:sect4|d:sect5|d:refentry|d:colophon|d:bibliodiv"
               mode="webhelptoc">
               <xsl:with-param name="currentid" select="$currentid" />
+              <xsl:with-param name="level" select="$level + 1" />
             </xsl:apply-templates>
           </ul>
         </xsl:if>
@@ -274,123 +280,12 @@
       css contents inside these default jquery css files. I thought of keeping them intact for easier maintenance! -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
+    <!-- upgraded from jquery-ui-1.8.2.custom.css -->
     <link rel="stylesheet" type="text/css"
-      href="{$webhelp.common.dir}jquery/theme-redmond/jquery-ui-1.8.2.custom.css" />
+      href="{$webhelp.common.dir}jquery/theme-redmond/jquery-ui-1.10.4.custom.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
-    <style type="text/css">
-#noscript{
-    font-weight:bold;
-	background-color: #55AA55;
-    font-weight: bold;
-    height: 25spx;
-    z-index: 3000;
-	top:0px;
-	width:100%;
-	position: relative;
-	border-bottom: solid 5px black;
-	text-align:center;
-	color: white;
-}
-
-input {
-    margin-bottom: 5px;
-    margin-top: 2px;
-}
-.folder {
-    display: block;
-    height: 22px;
-    padding-left: 20px;
-    background: transparent url(<xsl:value-of select="$webhelp.common.dir"/>jquery/treeview/images/folder.gif) 0 0px no-repeat;
-}
-span.contentsTab {
-    padding-left: 20px;
-    background: url(<xsl:value-of select="$webhelp.common.dir"/>images/toc-icon.png) no-repeat 0 center;
-}
-span.searchTab {
-    padding-left: 20px;
-    background: url(<xsl:value-of select="$webhelp.common.dir"/>images/search-icon.png) no-repeat 0 center;
-}
-
-/* Overide jquery treeview's defaults for ul. */
-.treeview ul {
-    background-color: transparent;
-    margin-top: 4px;
-}
-.webhelp-currentid {
-    background-color: #D8D8D8 !important;
-}
-.treeview .hover { color: black; }
-.filetree li span a { text-decoration: none; font-size: 12px; color: #517291; }
-
-/* Override jquery-ui's default css customizations. These are supposed to take precedence over those.*/
-.ui-widget-content {
-    border: 0px; 
-    background: none; 
-    color: none;     
-}
-.ui-widget-header {
-    color: #e9e8e9;
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
-    border-bottom: 1px solid #bbc4c5;
-    border-top: 4px solid #e5e5e5;
-    border: medium none;
-    background: #F4F4F4; /* old browsers */
-    background: -moz-linear-gradient(top, #F4F4F4 0%, #E6E4E5 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F4F4F4), color-stop(100%,#E6E4E5)); /* webkit */    
-    font-weight: none;
-}
-.ui-widget-header a { color: none; }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { 
-border: none; background: none; font-weight: none; color: none; }
-.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: black; text-decoration: none; }
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: none; background: none; font-weight: none; color: none; }
-
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: none; background: none; font-weight: none; color: none; }
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { 
-    color: black; text-decoration: none; 	
-    background: #C6C6C6; /* old browsers */
-    background: -moz-linear-gradient(top, #C6C6C6 0%, #D8D8D8 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C6C6C6), color-stop(100%,#D8D8D8)); /* webkit */
-    -webkit-border-radius:15px; -moz-border-radius:10px;
-    border: 1px solid #f1f1f1;
-}    
-.ui-corner-all { border-radius: 0 0 0 0; }
-
-.ui-tabs { padding: .2em;}
-.ui-tabs .ui-tabs-nav li { top: 0px; margin: -2px 0 1px; text-transform: uppercase; font-size: 10.5px;}
-.ui-tabs .ui-tabs-nav li a { padding: .25em 2em .25em 1em; margin: .5em; text-shadow: 0 1px 0 rgba(255,255,255,.5); }
-       /**
-	 *	Basic Layout Theme
-	 * 
-	 *	This theme uses the default layout class-names for all classes
-	 *	Add any 'custom class-names', from options: paneClass, resizerClass, togglerClass
-	 */
-
-	.ui-layout-pane { /* all 'panes' */ 
-		background: #FFF; 
-		border: 1px solid #BBB; 
-		padding: 05x; 
-		overflow: auto;
-	} 
-        
-	.ui-layout-resizer { /* all 'resizer-bars' */ 
-		background: #DDD; 
-                top:100px
-	} 
-
-	.ui-layout-toggler { /* all 'toggler-buttons' */ 
-		background: #AAA; 
-	}
-  
-    #sidebar {
-        display: block;
-    }
-    #leftnavigation {
-      width: 278px;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}style.css" />
     <xsl:comment>
       <xsl:text>[if IE]>
   &lt;link rel="stylesheet" type="text/css" href="../common/css/ie.css"/>
@@ -403,11 +298,18 @@ border: none; background: none; font-weight: none; color: none; }
       <xsl:comment>
       </xsl:comment>
     </script>
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery-1.7.2.min.js">
+    <!-- upgraded from 1.7.2 -->
+    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery-1.10.2.min.js">
       <xsl:comment>
       </xsl:comment>
     </script>
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.ui.all.js">
+    <!-- upgraded from "jquery.ui.all.js" -->
+    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery-ui-1.10.4.custom.min.js">
+      <xsl:comment>
+      </xsl:comment>
+    </script>
+    <!-- moved highlight to a separate file (previously together with jquery-ui) -->
+    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.highlight.js">
       <xsl:comment>
       </xsl:comment>
     </script>
@@ -419,7 +321,8 @@ border: none; background: none; font-weight: none; color: none; }
       <xsl:comment>
       </xsl:comment>
     </script>
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.js">
+    <!-- use a more recent, minifed, version -->
+    <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.min.js">
       <xsl:comment>
       </xsl:comment>
     </script>
@@ -472,9 +375,6 @@ border: none; background: none; font-weight: none; color: none; }
     </xsl:if>
     <xsl:call-template name="user.webhelp.head.content" />
   </xsl:template>
-
-  <!-- <xsl:import href="common.xsl"/> <xsl:import href="html-params.xsl"/> <xsl:import href="head-offline.xsl"/> 
-    <xsl:import href="syntaxhighlight.xsl"/> <xsl:import href="offline-footer.xsl"/> -->
 
 </xsl:stylesheet>
 

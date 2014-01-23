@@ -4,17 +4,10 @@
   Output documents styled by docbook.css.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
 <xsl:param name="html.stylesheet" select="'docbook-xsl.css'"/>
 
-<xsl:param name="htmlhelp.chm" select="'htmlhelp.chm'"/>
-<xsl:param name="htmlhelp.hhc.section.depth" select="5"/>
-
-<xsl:param name="section.autolabel">
-  <xsl:choose>
-    <xsl:when test="/processing-instruction('asciidoc-numbered')">1</xsl:when>
-    <xsl:otherwise>0</xsl:otherwise>
-  </xsl:choose>
-</xsl:param>
+<xsl:param name="section.autolabel">1</xsl:param>
 
 <xsl:template match="table[@role = 'NotInToc']|figure[@role = 'NotInToc']" mode="toc" />
 

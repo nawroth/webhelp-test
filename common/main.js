@@ -87,7 +87,7 @@ function initialize() {
 									&& $target.length) {
 								var targetOffset = $target.offset().top - 120;
 								$('html,body').animate({
-									scrollTop : targetOffset
+									'scrollTop' : targetOffset
 								}, 200);
 								return false;
 							}
@@ -168,7 +168,7 @@ function initialize() {
 	if (hash) {
 		var targetOffset = $(hash).offset().top - 120;
 		$('html,body').animate({
-			scrollTop : targetOffset
+			'scrollTop' : targetOffset
 		}, 200);
 		return false;
 	}
