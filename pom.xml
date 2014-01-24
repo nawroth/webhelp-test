@@ -128,6 +128,16 @@
                   <targetPath>${project.build.directory}/docbkx/webhelp/common</targetPath>
                   <preservePath>true</preservePath>
                 </resource>
+                <resource>
+                  <directory>${project.basedir}/css</directory>
+                  <targetPath>${project.build.directory}/docbkx/webhelp/css</targetPath>
+                  <preservePath>true</preservePath>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/js</directory>
+                  <targetPath>${project.build.directory}/docbkx/webhelp/js</targetPath>
+                  <preservePath>true</preservePath>
+                </resource>
               </resources>
             </configuration>
           </execution>

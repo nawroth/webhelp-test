@@ -1,6 +1,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-<xsl:template name="user.head.content">
+<xsl:template name="user.webhelp.head.content">
 <xsl:text disable-output-escaping="yes">
 <![CDATA[
 
@@ -9,67 +9,49 @@
 <link rel="shortcut icon" href="http://neo4j.org/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="icon" href="http://neo4j.org/favicon.ico" type="image/x-icon" />
 
-<!-- style -->
-
-<link href="css/shCore.css" rel="stylesheet" type="text/css" />
-<link href="css/shCoreEclipse.css" rel="stylesheet" type="text/css" />
-<link href="css/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+<!-- style
 <link href="css/neo.css" rel="stylesheet" type="text/css" />
-
+ -->
+ 
 <!-- Syntax Highlighter -->
 
-<script type="text/javascript" src="js/shCore.js"></script>
-<script type="text/javascript" src="js/shBrushJava.js"></script>
-<script type="text/javascript" src="js/shBrushJScript.js"></script>
-<script type="text/javascript" src="js/shBrushBash.js"></script>
-<script type="text/javascript" src="js/shBrushPlain.js"></script>
-<script type="text/javascript" src="js/shBrushXml.js"></script>
-<script type="text/javascript" src="js/shBrushGroovy.js"></script>
-<script type="text/javascript" src="js/shBrushCypher.js"></script>
-<script type="text/javascript" src="js/shBrushScala.js"></script>
-<script type="text/javascript" src="js/shBrushSql.js"></script>
-<script type="text/javascript" src="js/shBrushPython.js"></script>
-<script type="text/javascript" src="js/shBrushProperties.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/addon/runmode/runmode.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/javascript/javascript.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/shell/shell.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/sql/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/clike/clike.min.js"></script>
 
-<!-- activate when needed
-<script type="text/javascript" src="js/shBrushRuby.js"></script>
-<script type="text/javascript" src="js/shBrushCSharp.js"></script>
--->
+<link rel="stylesheet" href="css/codemirror-neo.css">
+<script src="js/codemirror-cypher.js"></script>
+<script src="js/colorize.js"></script>
  
 <script type="text/javascript">
-  SyntaxHighlighter.defaults['tab-size'] = 4;
-  SyntaxHighlighter.defaults['gutter'] = false;
-  SyntaxHighlighter.defaults['toolbar'] = false;
-  SyntaxHighlighter.all()
+  $(function (){
+    CodeMirror.colorize();
+  });
 </script>
 
-<!-- JQuery -->
-
-<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-
-<!-- Replace SVG for browsers that lack support. -->
+<!-- Replace SVG for browsers that lack support.
 <script type="text/javascript" src="js/svgreplacer.js"></script>
-
-<!-- Image Scaler -->
-
+ -->
+ 
+<!-- Image Scaler
 <script type="text/javascript" src="js/imagescaler.js"></script>
-
-<!-- Table Styler -->
-
+ -->
+ 
+<!-- Table Styler
 <script type="text/javascript" src="js/tablestyler.js"></script>
+ -->
 
-<!-- Version -->
-
+<!-- Version
 <script type="text/javascript" src="js/version.js"></script>
-
-<!-- Offline Sidebar -->
-
-<script type="text/javascript" src="js/sidebar.js"></script>
+ -->
 
 ]]>
 </xsl:text>
-
-  <xsl:call-template name="breadcrumbs"/>
 
 </xsl:template>
 

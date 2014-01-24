@@ -5,9 +5,11 @@
 
   <xsl:import href="common.xsl"/>
   <xsl:import href="html-params.xsl"/>
-  
+  <xsl:import href="head-offline.xsl"/>
+  <xsl:import href="syntaxhighlight.xsl"/>
+
   <!--   <xsl:import href="head-offline.xsl"/> 
-    <xsl:import href="syntaxhighlight.xsl"/> <xsl:import href="offline-footer.xsl"/> -->
+     <xsl:import href="offline-footer.xsl"/> -->
 
   <xsl:template match="d:formalpara[@role = 'cypherconsole']" />
   <xsl:template match="d:simpara[@role = 'cypherconsole']" />
@@ -294,25 +296,27 @@
   &lt;![endif]</xsl:text>
     </xsl:comment>
 
+      <xsl:comment>
     <!-- browserDetect is an Oxygen addition to warn the user if they're using chrome from the file system. 
       This breaks the Oxygen search highlighting. -->
+      </xsl:comment>
     <script type="text/javascript" src="{$webhelp.common.dir}browserDetect.js">
       <xsl:comment>
       </xsl:comment>
     </script>
-    <!-- upgraded from 1.7.2 -->
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery-1.10.2.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
       <xsl:comment>
+        <!-- upgraded from 1.7.2 -->
       </xsl:comment>
     </script>
-    <!-- upgraded from "jquery.ui.all.js" -->
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery-ui-1.10.4.custom.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js">
       <xsl:comment>
+        <!-- upgraded from "jquery.ui.all.js" -->
       </xsl:comment>
     </script>
-    <!-- moved highlight to a separate file (previously together with jquery-ui) -->
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.highlight.js">
       <xsl:comment>
+    <!-- moved highlight to a separate file (previously together with jquery-ui) -->
       </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.cookie.js">
@@ -323,9 +327,9 @@
       <xsl:comment>
       </xsl:comment>
     </script>
-    <!-- use a more recent, minifed, version -->
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.min.js">
       <xsl:comment>
+    <!-- use a more recent, minifed, version -->
       </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}main.js">
