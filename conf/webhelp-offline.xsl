@@ -4,7 +4,9 @@
   <xsl:import href="urn:docbkx:stylesheet" />
 
   <xsl:import href="common.xsl"/>
-  <!--  <xsl:import href="html-params.xsl"/> <xsl:import href="head-offline.xsl"/> 
+  <xsl:import href="html-params.xsl"/>
+  
+  <!--   <xsl:import href="head-offline.xsl"/> 
     <xsl:import href="syntaxhighlight.xsl"/> <xsl:import href="offline-footer.xsl"/> -->
 
   <xsl:template match="d:formalpara[@role = 'cypherconsole']" />
