@@ -56,6 +56,10 @@ function initialize() {
 	// Set the webhelp-currentid class on the current page in the treenav.
 	var foundPage = undefined;
 	var page = window.location.href;
+  if (window.location.hash) {
+    // only look at the URL without the hash
+    page = page.substr(0, page.length - window.location.hash.length);
+  }
 	if (page) {
 		$('#tree').find('a').each(function() {
 			if (this.href === page) {

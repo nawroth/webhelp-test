@@ -5,11 +5,10 @@
 
   <xsl:import href="common.xsl"/>
   <xsl:import href="html-params.xsl"/>
-  <xsl:import href="head-offline.xsl"/>
+  <xsl:import href="head.xsl"/>
   <xsl:import href="syntaxhighlight.xsl"/>
 
-  <!--   <xsl:import href="head-offline.xsl"/> 
-     <xsl:import href="offline-footer.xsl"/> -->
+  <!-- <xsl:import href="offline-footer.xsl"/> -->
 
   <xsl:template match="d:formalpara[@role = 'cypherconsole']" />
   <xsl:template match="d:simpara[@role = 'cypherconsole']" />
@@ -28,9 +27,8 @@
   </l:i18n>
 
   <xsl:template name="webhelpheader.logo">
-    <a href="index.html">
-      <img style='margin-right: 2px; height: 49px; padding-right: 25px; padding-top: 8px' align="right"
-        src='images/neo4j-logo.png' alt="" />
+    <a href="index.html" id="logo">
+      <img src='common/images/welcome-logo.png' alt="" />
     </a>
   </xsl:template>
 
@@ -125,17 +123,12 @@
       <!-- Display the page title and the main heading(parent) of it -->
       <h1>
         <xsl:apply-templates select="/*[1]" mode="title.markup" />
-        <br />
         <xsl:choose>
-          <xsl:when test="count($up) &gt; 0 and generate-id($up) != generate-id($home)">
-            <xsl:apply-templates select="$up" mode="object.title.markup" />
-          </xsl:when>
           <xsl:when test="not(generate-id(.) = generate-id(/*))">
-            <xsl:apply-templates select="." mode="object.title.markup" />
+            <span>
+              <xsl:apply-templates select="." mode="object.title.markup" />
+            </span>
           </xsl:when>
-          <xsl:otherwise>
-            &#160;
-          </xsl:otherwise>
         </xsl:choose>
       </h1>
       <!-- Prev and Next links generation -->
@@ -150,7 +143,7 @@
         <table class="navLinks">
           <tr>
             <td>
-              <a id="showHideButton" href="#" class="pointLeft" tabindex="5" title="Show/Hide TOC tree">Sidebar
+              <a id="showHideButton" href="#" class="pointLeft" tabindex="5" title="Show/Hide TOC tree"><i class="fa fa-columns"></i> Sidebar
               </a>
             </td>
             <xsl:if
@@ -161,7 +154,7 @@
                             or count($next) &gt; 0">
               <td>
                 <xsl:if test="count($prev)>0">
-                  <a accesskey="p" class="navLinkPrevious" tabindex="5">
+                  <a accesskey="p" class="navLinkPrevious" tabindex="5"> 
                     <xsl:attribute name="href">
                                             <xsl:call-template name="href.target">
                                                 <xsl:with-param name="object"
@@ -171,7 +164,7 @@
                     <xsl:call-template name="navig.content">
                       <xsl:with-param name="direction" select="'prev'" />
                     </xsl:call-template>
-                  </a>
+                  <i class="fa fa-arrow-circle-left"></i></a>
                 </xsl:if>
 
                 <!-- "Up" link -->
@@ -190,7 +183,7 @@
                       <xsl:call-template name="navig.content">
                         <xsl:with-param name="direction" select="'up'" />
                       </xsl:call-template>
-                    </a>
+                    <i class="fa fa-arrow-circle-up"></i></a>
                   </xsl:when>
                   <xsl:otherwise>
                     &#160;
@@ -209,7 +202,7 @@
                     <xsl:call-template name="navig.content">
                       <xsl:with-param name="direction" select="'next'" />
                     </xsl:call-template>
-                  </a>
+                  <i class="fa fa-arrow-circle-right"></i></a>
                 </xsl:if>
               </td>
             </xsl:if>
@@ -286,7 +279,7 @@
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
     <!-- upgraded from jquery-ui-1.8.2.custom.css -->
     <link rel="stylesheet" type="text/css"
-      href="{$webhelp.common.dir}jquery/theme-redmond/jquery-ui-1.10.4.custom.min.css" />
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}style.css" />
@@ -295,7 +288,9 @@
   &lt;link rel="stylesheet" type="text/css" href="../common/css/ie.css"/>
   &lt;![endif]</xsl:text>
     </xsl:comment>
-
+    
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    
       <xsl:comment>
     <!-- browserDetect is an Oxygen addition to warn the user if they're using chrome from the file system. 
       This breaks the Oxygen search highlighting. -->

@@ -20,15 +20,15 @@ input {
     display: block;
     height: 22px;
     padding-left: 20px;
-    background: transparent url(<xsl:value-of select="$webhelp.common.dir"/>jquery/treeview/images/folder.gif) 0 0px no-repeat;
+    background: transparent url("jquery/treeview/images/folder.gif") 0 0px no-repeat;
 }
 span.contentsTab {
     padding-left: 20px;
-    background: url(<xsl:value-of select="$webhelp.common.dir"/>images/toc-icon.png) no-repeat 0 center;
+    background: url("images/toc-icon.png") no-repeat 0 center;
 }
 span.searchTab {
     padding-left: 20px;
-    background: url(<xsl:value-of select="$webhelp.common.dir"/>images/search-icon.png) no-repeat 0 center;
+    background: url("images/search-icon.png") no-repeat 0 center;
 }
 
 /* Overide jquery treeview's defaults for ul. */
@@ -79,7 +79,7 @@ border: none; background: none; font-weight: none; color: none; }
 
 .ui-tabs { padding: .2em;}
 .ui-tabs .ui-tabs-nav li { top: 0px; margin: -2px 0 1px; text-transform: uppercase; font-size: 10.5px;}
-.ui-tabs .ui-tabs-nav li a { padding: .25em 2em .25em 1em; margin: .5em; text-shadow: 0 1px 0 rgba(255,255,255,.5); }
+.ui-tabs .ui-tabs-nav li a { padding: .25em 1em .25em 1em; margin: .5em; text-shadow: 0 1px 0 rgba(255,255,255,.5); }
        /**
 	 *	Basic Layout Theme
 	 * 
@@ -89,7 +89,7 @@ border: none; background: none; font-weight: none; color: none; }
 
 	.ui-layout-pane { /* all 'panes' */ 
 		background: #FFF; 
-		border: 1px solid #BBB; 
+		border: none; /*1px solid #BBB;*/ 
 		padding: 05x; 
 		overflow: auto;
 	} 
@@ -106,7 +106,35 @@ border: none; background: none; font-weight: none; color: none; }
     #sidebar {
         display: block;
     }
-    #leftnavigation {
-      width: 278px;
+    
+    #sidebar-wrapper {
+        background-color: #ededed;
     }
 
+
+#header {
+    background: #30333a; /* #292b31 */
+    color: #ffffff;
+}
+
+#header h1 {
+    color: #ffffff !important;
+    font-size: 18px;
+}
+
+#header h1 span {
+    display: block;
+    font-size: 24px;
+}
+
+#navheader {
+    position: fixed;
+    background: none;
+    left: 2px;
+    top: 72px;
+    text-align: right;
+}
+
+a#showHideButton, a.navLinkPrevious, a.navLinkNext {
+	background: none;
+}

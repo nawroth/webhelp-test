@@ -34,17 +34,14 @@
   });
 </script>
 
-<!-- Replace SVG for browsers that lack support.
+<!-- Replace SVG for browsers that lack support. -->
 <script type="text/javascript" src="js/svgreplacer.js"></script>
- -->
  
-<!-- Image Scaler
+<!-- Image Scaler -->
 <script type="text/javascript" src="js/imagescaler.js"></script>
- -->
  
-<!-- Table Styler
+<!-- Table Styler -->
 <script type="text/javascript" src="js/tablestyler.js"></script>
- -->
 
 <!-- Version
 <script type="text/javascript" src="js/version.js"></script>
