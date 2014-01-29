@@ -266,12 +266,14 @@ a#showHideButton {
 
 .remark, .remark .added, .remark .changed, .remark .deleted{ background: yellow;} 
 
+/*
 tr th, tr th .internal, tr th .added, tr th .changed {
 	background: #00589E;
 	color: white;
 	font-weight: bold;
 	text-align: left;
 }
+*/
 
 .statustext{
     position:fixed;
@@ -330,6 +332,7 @@ div.note *, div.caution *, div.important *, div.tip *, div.warning * {
     border: inherit  !important;    
 }
 
+/*
 #content table thead, #content table th{
     background: gray;
     color: white;
@@ -343,6 +346,7 @@ div.note *, div.caution *, div.important *, div.tip *, div.warning * {
 #content table td, #content table th { padding: 5px;}
 
 #content table {margin-bottom: 20px;}
+*/
 
 *[align = 'center']{ text-align: center;}
 

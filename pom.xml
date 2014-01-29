@@ -75,7 +75,7 @@
         <version>2.0.15</version>
         <executions>
           <execution>
-            <id>generate-html</id>
+            <id>generate-webhelp-html</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>generate-webhelp</goal>
@@ -91,7 +91,7 @@
           <generateSectionTocLevel>1</generateSectionTocLevel>
           <admonGraphics>true</admonGraphics>
           <admonGraphicsPath>images/icons/admon/</admonGraphicsPath>
-          <admonGraphicsExtension>.png</admonGraphicsExtension>
+          <admonGraphicsExtension>.svg</admonGraphicsExtension>
           <generateLegalnoticeLink>true</generateLegalnoticeLink>
           <useIdAsFilename>true</useIdAsFilename>
           <chunkSectionDepth>1</chunkSectionDepth>
@@ -119,6 +119,7 @@
           </generateToc>
           <tableFrameBorderColor>#ffffff</tableFrameBorderColor>
           <tableCellBorderColor>#ffffff</tableCellBorderColor>
+          <tableFrameBorderThickness>0</tableFrameBorderThickness>
           <htmlCellpadding>0</htmlCellpadding>
           <htmlCellspacing>0</htmlCellspacing>
         </configuration>

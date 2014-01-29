@@ -9,8 +9,8 @@
 <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>g</title>
 <polygon fill="white" stroke="white" points="-4,5 -4,-136 103,-136 103,5 -4,5"/>
-<!-- N19 -->
-<g id="node1" class="node"><title>N19</title>
+<!-- N10 -->
+<g id="node1" class="node"><title>N10</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="11.5,-1 86.5,-1 98.5,-13 98.5,-25 86.5,-37 11.5,-37 -0.5,-25 -0.5,-13 11.5,-1"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M86.5,-1C92.5,-1 98.5,-7 98.5,-13"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M98.5,-25C98.5,-31 92.5,-37 86.5,-37"/>
@@ -24,10 +24,10 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M11.5,-37C5.5,-37 -0.5,-31 -0.5,-25"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="-0.5,-25 -0.5,-13 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M-0.5,-13C-0.5,-7 5.5,-1 11.5,-1"/>
-<text text-anchor="start" x="7.5" y="-16.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[19]name = &#39;Sara&#39;</text>
+<text text-anchor="start" x="7.5" y="-16.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[10]name = &#39;Sara&#39;</text>
 </g>
-<!-- N20 -->
-<g id="node2" class="node"><title>N20</title>
+<!-- N11 -->
+<g id="node2" class="node"><title>N11</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="13.5,-95 84.5,-95 96.5,-107 96.5,-119 84.5,-131 13.5,-131 1.5,-119 1.5,-107 13.5,-95"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M84.5,-95C90.5,-95 96.5,-101 96.5,-107"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M96.5,-119C96.5,-125 90.5,-131 84.5,-131"/>
@@ -41,16 +41,16 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M13.5,-131C7.5,-131 1.5,-125 1.5,-119"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="1.5,-119 1.5,-107 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M1.5,-107C1.5,-101 7.5,-95 13.5,-95"/>
-<text text-anchor="start" x="9.5" y="-110.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[20]name = &#39;Joe&#39;</text>
+<text text-anchor="start" x="9.5" y="-110.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[11]name = &#39;Joe&#39;</text>
 </g>
-<!-- N20&#45;&gt;N19 -->
-<g id="edge2" class="edge"><title>N20&#45;&gt;N19</title>
+<!-- N11&#45;&gt;N10 -->
+<g id="edge2" class="edge"><title>N11&#45;&gt;N10</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M29.4025,-94.6819C24.7689,-89.1713 20.4624,-82.7733 18,-76 14.9629,-67.6461 14.9629,-64.3539 18,-56 19.616,-51.555 22.0261,-47.2717 24.8017,-43.2947"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="29.4025,-37.3181 27.5018,-45.3199 27.5112,-40.5946 25.2237,-43.5661 24.8275,-43.2611 24.4313,-42.9561 26.7188,-39.9846 22.1531,-41.2023 29.4025,-37.3181 29.4025,-37.3181"/>
 <text text-anchor="middle" x="30" y="-63.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>
 </g>
-<!-- N20&#45;&gt;N19 -->
-<g id="edge4" class="edge"><title>N20&#45;&gt;N19</title>
+<!-- N11&#45;&gt;N10 -->
+<g id="edge4" class="edge"><title>N11&#45;&gt;N10</title>
 <path fill="none" stroke="#4e9a06" stroke-width="2" d="M49,-94.8759C49,-80.7014 49,-60.806 49,-44.944"/>
 <polygon fill="#4e9a06" stroke="#4e9a06" points="49,-37.0685 52.3751,-44.5685 49.5,-40.8185 49.5001,-44.5685 49.0001,-44.5685 48.5001,-44.5685 48.5,-40.8185 45.6251,-44.5685 49,-37.0685 49,-37.0685"/>
 <text text-anchor="middle" x="67" y="-68.8" font-family="FreeSans" font-size="8.00" fill="#4e9a06">LOVES</text>

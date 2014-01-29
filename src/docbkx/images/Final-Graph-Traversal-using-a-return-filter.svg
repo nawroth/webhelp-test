@@ -9,8 +9,8 @@
 <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 378)">
 <title>g</title>
 <polygon fill="white" stroke="white" points="-4,5 -4,-378 282,-378 282,5 -4,5"/>
-<!-- N120 -->
-<g id="node1" class="node"><title>N120</title>
+<!-- N371 -->
+<g id="node1" class="node"><title>N371</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="150,-1 230,-1 242,-13 242,-25 230,-37 150,-37 138,-25 138,-13 150,-1"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M230,-1C236,-1 242,-7 242,-13"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M242,-25C242,-31 236,-37 230,-37"/>
@@ -24,10 +24,10 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M150,-37C144,-37 138,-31 138,-25"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="138,-25 138,-13 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M138,-13C138,-7 144,-1 150,-1"/>
-<text text-anchor="start" x="146" y="-16.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[120]name = &#39;Sara&#39;</text>
+<text text-anchor="start" x="146" y="-16.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[371]name = &#39;Sara&#39;</text>
 </g>
-<!-- N121 -->
-<g id="node2" class="node"><title>N121</title>
+<!-- N372 -->
+<g id="node2" class="node"><title>N372</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="39.5,-253 124.5,-253 136.5,-265 136.5,-277 124.5,-289 39.5,-289 27.5,-277 27.5,-265 39.5,-253"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M124.5,-253C130.5,-253 136.5,-259 136.5,-265"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M136.5,-277C136.5,-283 130.5,-289 124.5,-289"/>
@@ -41,10 +41,10 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M39.5,-289C33.5,-289 27.5,-283 27.5,-277"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="27.5,-277 27.5,-265 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M27.5,-265C27.5,-259 33.5,-253 39.5,-253"/>
-<text text-anchor="start" x="35.5" y="-268.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[121]name = &#39;Johan&#39;</text>
+<text text-anchor="start" x="35.5" y="-268.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[372]name = &#39;Johan&#39;</text>
 </g>
-<!-- N122 -->
-<g id="node4" class="node"><title>N122</title>
+<!-- N373 -->
+<g id="node4" class="node"><title>N373</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="43.5,-169 120.5,-169 132.5,-181 132.5,-193 120.5,-205 43.5,-205 31.5,-193 31.5,-181 43.5,-169"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M120.5,-169C126.5,-169 132.5,-175 132.5,-181"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M132.5,-193C132.5,-199 126.5,-205 120.5,-205"/>
@@ -58,16 +58,16 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M43.5,-205C37.5,-205 31.5,-199 31.5,-193"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="31.5,-193 31.5,-181 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M31.5,-181C31.5,-175 37.5,-169 43.5,-169"/>
-<text text-anchor="start" x="39.5" y="-184.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[122]name = &#39;Emil&#39;</text>
+<text text-anchor="start" x="39.5" y="-184.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[373]name = &#39;Emil&#39;</text>
 </g>
-<!-- N121&#45;&gt;N122 -->
-<g id="edge2" class="edge"><title>N121&#45;&gt;N122</title>
+<!-- N372&#45;&gt;N373 -->
+<g id="edge2" class="edge"><title>N372&#45;&gt;N373</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M82,-252.773C82,-241.105 82,-225.787 82,-212.87"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="82,-205.191 85.3751,-212.691 82.5,-208.941 82.5001,-212.691 82.0001,-212.691 81.5001,-212.691 81.5,-208.941 78.6251,-212.691 82,-205.191 82,-205.191"/>
 <text text-anchor="middle" x="94" y="-226.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>
 </g>
-<!-- N125 -->
-<g id="node6" class="node"><title>N125</title>
+<!-- N376 -->
+<g id="node6" class="node"><title>N376</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="12,-85 94,-85 106,-97 106,-109 94,-121 12,-121 0,-109 0,-97 12,-85"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M94,-85C100,-85 106,-91 106,-97"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M106,-109C106,-115 100,-121 94,-121"/>
@@ -81,16 +81,16 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M12,-121C6,-121 0,-115 0,-109"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="0,-109 0,-97 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M0,-97C0,-91 6,-85 12,-85"/>
-<text text-anchor="start" x="8" y="-100.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[125]name = &#39;Peter&#39;</text>
+<text text-anchor="start" x="8" y="-100.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[376]name = &#39;Peter&#39;</text>
 </g>
-<!-- N122&#45;&gt;N125 -->
-<g id="edge4" class="edge"><title>N122&#45;&gt;N125</title>
+<!-- N373&#45;&gt;N376 -->
+<g id="edge4" class="edge"><title>N373&#45;&gt;N376</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M75.7074,-168.773C71.6412,-156.995 66.291,-141.498 61.8053,-128.505"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="59.2803,-121.191 64.9181,-127.179 60.9767,-124.573 62.2005,-128.117 61.7279,-128.281 61.2553,-128.444 60.0315,-124.899 58.5377,-129.382 59.2803,-121.191 59.2803,-121.191"/>
 <text text-anchor="middle" x="81" y="-142.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>
 </g>
-<!-- N124 -->
-<g id="node8" class="node"><title>N124</title>
+<!-- N375 -->
+<g id="node8" class="node"><title>N375</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="147,-85 233,-85 245,-97 245,-109 233,-121 147,-121 135,-109 135,-97 147,-85"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M233,-85C239,-85 245,-91 245,-97"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M245,-109C245,-115 239,-121 233,-121"/>
@@ -104,22 +104,22 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M147,-121C141,-121 135,-115 135,-109"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="135,-109 135,-97 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M135,-97C135,-91 141,-85 147,-85"/>
-<text text-anchor="start" x="143" y="-100.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[124]name = &#39;Tobias&#39;</text>
+<text text-anchor="start" x="143" y="-100.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[375]name = &#39;Tobias&#39;</text>
 </g>
-<!-- N122&#45;&gt;N124 -->
-<g id="edge6" class="edge"><title>N122&#45;&gt;N124</title>
+<!-- N373&#45;&gt;N375 -->
+<g id="edge6" class="edge"><title>N373&#45;&gt;N375</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M105.169,-168.98C121.287,-156.443 142.918,-139.619 160.302,-126.098"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="166.497,-121.28 162.649,-128.549 163.844,-123.977 160.884,-126.279 160.577,-125.885 160.27,-125.49 163.23,-123.188 158.505,-123.221 166.497,-121.28 166.497,-121.28"/>
 <text text-anchor="middle" x="152" y="-142.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>
 </g>
-<!-- N124&#45;&gt;N120 -->
-<g id="edge12" class="edge"><title>N124&#45;&gt;N120</title>
+<!-- N375&#45;&gt;N371 -->
+<g id="edge12" class="edge"><title>N375&#45;&gt;N371</title>
 <path fill="none" stroke="#4e9a06" stroke-width="2" d="M190,-84.7733C190,-73.1053 190,-57.7874 190,-44.8699"/>
 <polygon fill="#4e9a06" stroke="#4e9a06" points="190,-37.1912 193.375,-44.6911 190.5,-40.9412 190.5,-44.6912 190,-44.6912 189.5,-44.6912 189.5,-40.9412 186.625,-44.6912 190,-37.1912 190,-37.1912"/>
 <text text-anchor="middle" x="199.5" y="-58.8" font-family="FreeSans" font-size="8.00" fill="#4e9a06">loves</text>
 </g>
-<!-- N123 -->
-<g id="node9" class="node"><title>N123</title>
+<!-- N374 -->
+<g id="node9" class="node"><title>N374</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="131,-337 211,-337 223,-349 223,-361 211,-373 131,-373 119,-361 119,-349 131,-337"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M211,-337C217,-337 223,-343 223,-349"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M223,-361C223,-367 217,-373 211,-373"/>
@@ -133,16 +133,16 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M131,-373C125,-373 119,-367 119,-361"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="119,-361 119,-349 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M119,-349C119,-343 125,-337 131,-337"/>
-<text text-anchor="start" x="127" y="-352.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[123]name = &#39;Root&#39;</text>
+<text text-anchor="start" x="127" y="-352.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[374]name = &#39;Root&#39;</text>
 </g>
-<!-- N123&#45;&gt;N121 -->
-<g id="edge10" class="edge"><title>N123&#45;&gt;N121</title>
+<!-- N374&#45;&gt;N372 -->
+<g id="edge10" class="edge"><title>N374&#45;&gt;N372</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M151.688,-336.773C138.509,-324.335 120.936,-307.748 106.733,-294.344"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="101.274,-289.191 109.045,-291.885 104.344,-291.402 107.072,-293.975 106.728,-294.339 106.385,-294.703 103.658,-292.129 104.412,-296.794 101.274,-289.191 101.274,-289.191"/>
 <text text-anchor="middle" x="142" y="-310.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>
 </g>
-<!-- N126 -->
-<g id="node11" class="node"><title>N126</title>
+<!-- N377 -->
+<g id="node11" class="node"><title>N377</title>
 <polygon fill="#ffffff" stroke="#ffffff" stroke-width="1.5" points="177,-253 265,-253 277,-265 277,-277 265,-289 177,-289 165,-277 165,-265 177,-253"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M265,-253C271,-253 277,-259 277,-265"/>
 <path fill="#ffffff" stroke="#ffffff" stroke-width="1.5" d="M277,-277C277,-283 271,-289 265,-289"/>
@@ -156,10 +156,10 @@
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M177,-289C171,-289 165,-283 165,-277"/>
 <polyline fill="none" stroke="#2e3436" stroke-width="1.5" points="165,-277 165,-265 "/>
 <path fill="none" stroke="#2e3436" stroke-width="1.5" d="M165,-265C165,-259 171,-253 177,-253"/>
-<text text-anchor="start" x="173" y="-268.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[126]name = &#39;Mattias&#39;</text>
+<text text-anchor="start" x="173" y="-268.8" font-family="FreeSans" font-size="8.00" fill="#1c2021">Node[377]name = &#39;Mattias&#39;</text>
 </g>
-<!-- N123&#45;&gt;N126 -->
-<g id="edge8" class="edge"><title>N123&#45;&gt;N126</title>
+<!-- N374&#45;&gt;N377 -->
+<g id="edge8" class="edge"><title>N374&#45;&gt;N377</title>
 <path fill="none" stroke="#2e3436" stroke-width="2" d="M181.849,-336.773C188.991,-324.775 198.43,-308.917 206.251,-295.779"/>
 <polygon fill="#2e3436" stroke="#2e3436" points="210.172,-289.191 209.236,-297.362 208.683,-292.669 206.765,-295.892 206.336,-295.636 205.906,-295.38 207.824,-292.158 203.436,-293.91 210.172,-289.191 210.172,-289.191"/>
 <text text-anchor="middle" x="210" y="-310.8" font-family="FreeSans" font-size="8.00" fill="#2e3436">knows</text>

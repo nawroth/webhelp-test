@@ -283,7 +283,7 @@
       href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
-    <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}style.css" />
+    <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/style.css" />
     <xsl:comment>
       <xsl:text>[if IE]>
   &lt;link rel="stylesheet" type="text/css" href="../common/css/ie.css"/>
