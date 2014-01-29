@@ -15,11 +15,11 @@
 
 <!-- fonts -->
 
-<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css' />
  
 <!-- Syntax Highlighter -->
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/addon/runmode/runmode.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/javascript/javascript.min.js"></script>
@@ -28,7 +28,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/clike/clike.min.js"></script>
 
-<link rel="stylesheet" href="css/codemirror-neo.css">
+<link rel="stylesheet" href="css/codemirror-neo.css" />
 <script src="js/codemirror-cypher.js"></script>
 <script src="js/colorize.js"></script>
  

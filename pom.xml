@@ -92,6 +92,8 @@
           <admonGraphics>true</admonGraphics>
           <admonGraphicsPath>images/icons/admon/</admonGraphicsPath>
           <admonGraphicsExtension>.svg</admonGraphicsExtension>
+          <htmlExt>.html</htmlExt>
+          <chunkerOutputOmitXmlDeclaration>yes</chunkerOutputOmitXmlDeclaration>
           <generateLegalnoticeLink>true</generateLegalnoticeLink>
           <useIdAsFilename>true</useIdAsFilename>
           <chunkSectionDepth>1</chunkSectionDepth>
