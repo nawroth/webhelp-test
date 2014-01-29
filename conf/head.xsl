@@ -12,6 +12,10 @@
 <!-- style
 <link href="css/neo.css" rel="stylesheet" type="text/css" />
  -->
+
+<!-- fonts -->
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Lato:400,700,400italic' rel='stylesheet' type='text/css'>
  
 <!-- Syntax Highlighter -->
 

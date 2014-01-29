@@ -147,12 +147,12 @@ a.navLinkNext i, a.navLinkUp i {
   margin-left: 0.5em;
 }
 
-body {
-    font: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+body, .ui-widget {
+    font: 15px Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 pre {
-    font: 16px Menlo,Terminal,Consolas,Inconsolata,Monaco,'Bitstream Vera Sans Mono','Ubuntu Mono','Courier New',monospace;
+    font: 14px 'Ubuntu Mono',Menlo,Consolas,Inconsolata,monospace;
 }
 
 span.contentsTab {
