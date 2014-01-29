@@ -169,3 +169,11 @@ span.contentsTab i, span.searchTab i {
 #showHideButton i {
     margin-right: 0.25em;
 }
+
+/* for IE */
+a, a img {
+  outline : none;
+}
+img {
+  border : 0;
+}
