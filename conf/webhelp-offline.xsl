@@ -1,5 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-  xmlns:d="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml">
+  xmlns:d="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="d">
 
   <xsl:import href="urn:docbkx:stylesheet" />
 
@@ -38,7 +38,7 @@
         <xsl:with-param name="filename">
           <xsl:value-of select="concat($webhelp.base.dir,'/webhelp-tree.html')" />
         </xsl:with-param>
-        <xsl:with-param name="method" select="'xml'" />
+        <xsl:with-param name="method" select="'html'" />
         <xsl:with-param name="omit-xml-declaration" select="'yes'" />
         <xsl:with-param name="encoding" select="'utf-8'" />
         <xsl:with-param name="indent" select="'no'" />
@@ -240,7 +240,7 @@
     <xsl:param name="title">
       <xsl:apply-templates select="." mode="object.title.markup.textonly" />
     </xsl:param>
-    <meta name="Section-title" content="{$title}" />
+    <!--  meta name="Section-title" content="{$title}" />  -->
 
     <!-- <xsl:message> webhelp.tree.cookie.id = <xsl:value-of select="$webhelp.tree.cookie.id"/> +++ 
       <xsl:value-of select="count(//node())"/> $webhelp.indexer.language = <xsl:value-of select="$webhelp.indexer.language"/> 
@@ -276,9 +276,7 @@
     <!-- kasunbg: Order is important between the in-html-file css and the linked css files. Some css 
       declarations in jquery-ui-1.8.2.custom.css are over-ridden. If that's a concern, just remove the additional 
       css contents inside these default jquery css files. I thought of keeping them intact for easier maintenance! -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
-    <!-- upgraded from jquery-ui-1.8.2.custom.css -->
     <link rel="stylesheet" type="text/css"
       href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
@@ -292,69 +290,39 @@
     
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
     
-      <xsl:comment>
     <!-- browserDetect is an Oxygen addition to warn the user if they're using chrome from the file system. 
       This breaks the Oxygen search highlighting. -->
-      </xsl:comment>
     <script type="text/javascript" src="{$webhelp.common.dir}browserDetect.js">
-      <xsl:comment>
-      </xsl:comment>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-      <xsl:comment>
-        <!-- upgraded from 1.7.2 -->
-      </xsl:comment>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js">
-      <xsl:comment>
-        <!-- upgraded from "jquery.ui.all.js" -->
-      </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.highlight.js">
-      <xsl:comment>
-    <!-- moved highlight to a separate file (previously together with jquery-ui) -->
-      </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.cookie.js">
-      <xsl:comment>
-      </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/treeview/jquery.treeview.min.js">
-      <xsl:comment>
-      </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.min.js">
-      <xsl:comment>
-    <!-- use a more recent, minifed, version -->
-      </xsl:comment>
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}main.js">
-      <xsl:comment>
-      </xsl:comment>
     </script>
     <xsl:if test="$webhelp.include.search.tab != '0'">
       <!--Scripts/css stylesheets for Search -->
       <!-- TODO: Why THREE files? There's absolutely no need for having separate files. These should 
         have been identified at the optimization phase! -->
       <script type="text/javascript" src="search/l10n.js">
-        <xsl:comment />
       </script>
       <script type="text/javascript" src="search/htmlFileInfoList.js">
-        <xsl:comment>
-        </xsl:comment>
       </script>
       <script type="text/javascript" src="search/nwSearchFnt.js">
-        <xsl:comment>
-        </xsl:comment>
       </script>
 
       <!-- NOTE: Stemmer javascript files should be in format <language>_stemmer.js. For example, for 
         English(en), source should be: "search/stemmers/en_stemmer.js" For country codes, see: http://www.uspto.gov/patft/help/helpctry.htm -->
       <!--<xsl:message><xsl:value-of select="concat('search/stemmers/',$webhelp.indexer.language,'_stemmer.js')"/></xsl:message> -->
       <script type="text/javascript" src="{concat('search/stemmers/',$webhelp.indexer.language,'_stemmer.js')}">
-        <xsl:comment>
-          //make this scalable to other languages as well.
-        </xsl:comment>
       </script>
 
       <!--Index Files: Index is broken in to three equal sized(number of index items) files. This is 
@@ -362,16 +330,10 @@
         document that can be find, and analyze the file sizes. IF the file size is still around ~50KB for a given 
         file, we should consider merging these files together. again. -->
       <script type="text/javascript" src="search/index-1.js">
-        <xsl:comment>
-        </xsl:comment>
       </script>
       <script type="text/javascript" src="search/index-2.js">
-        <xsl:comment>
-        </xsl:comment>
       </script>
       <script type="text/javascript" src="search/index-3.js">
-        <xsl:comment>
-        </xsl:comment>
       </script>
       <!--End of index files -->
     </xsl:if>

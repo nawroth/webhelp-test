@@ -1,5 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-  xmlns:d="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml">
+  xmlns:d="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="d">
 
   <xsl:template match="d:programlisting">
     <xsl:param name="suppress-numbers" select="'0'" />
