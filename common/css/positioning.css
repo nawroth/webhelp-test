@@ -32,9 +32,7 @@
     left: 0;
     width:inherit;
     z-index: 1500;
-    border-right:2px solid #bbbbbb;
     padding:1px;
-    background-color: #f2f2f2!important;
 }
 
 #treeDiv {
@@ -55,11 +53,10 @@
     height: inherit;
     padding-left: 5px;
     padding-right: 30px;
-    border-left: 1px solid #bbbbbb;
+    border-left: 1px solid #cccccc;
     overflow :scroll;
     overflow-x:hidden;
-    z-index: 1000;
- 
+    z-index: 1000; 
 }
 
 #navheader {
@@ -72,7 +69,10 @@
     padding-left: 10px;
 }
 
-.navfooter { bottom: 2%; }
+div.navfooter { bottom: 2%; }
+div.navfooter > table {
+  background: none;
+} 
 .highlight { background-color: #c5d3c3; }
 .highlightButton{ font-size: 0; }
 
@@ -96,7 +96,8 @@
 }
 .searchresult li a {
     text-decoration: none;
-    color: #0050A0;
+    font-size: 13px;
+    color: #000000;
 }
 .searchresult li { color: #0050A0; }
 .shortdesclink { color: gray; font-size: 9pt; }
@@ -115,58 +116,40 @@
 
 .title, div.toc>p{ font-weight: bold; }	
 
-p.breadcrumbs {
-        display: inline;
-	margin-bottom: 0px;
-	margin-top: 33px;
-}
-
-p.breadcrumbs a {
-	padding-right: 12px;
-	margin-right: 5px;
-	text-decoration: none;
-	color: #575757;
-	text-transform: uppercase;
-	font-size: 10px;
-}
-
-p.breadcrumbs a:first-child {background: url(../images/breadcrumb-arrow-white.png) no-repeat right center;}
-
-p.breadcrumbs a:hover {text-decoration: underline;}
-
 #star ul.star { 
-    LIST-STYLE: none; 
-    MARGIN: 0; 
-    PADDING: 0; 
-    WIDTH: 85px;
-    /* was 100 */ 
-    HEIGHT: 20px;
-    LEFT: 1px; 
-    TOP: -5px; 
-    POSITION: relative; 
-    FLOAT: right; 
-    BACKGROUND: url('../images/starsSmall.png') repeat-x 0 -25px;
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 85px;
+    height: 20px;
+    left: 1px; 
+    top: -5px; 
+    position: relative; 
+    float: right; 
+    background: url('../images/starsSmall.png') repeat-x 0 -25px;
 }
 #star li { 
-    PADDING: 0; 
-    MARGIN: 0; 
-    FLOAT: right; 
-    DISPLAY: block; 
-    WIDTH: 85px;
-    /* was 100 */
-    HEIGHT: 20px; 
-    TEXT-DECORATION: none; 
+    padding: 0; 
+    margin: 0; 
+    float: right; 
+    display: block; 
+    width: 85px;
+    height: 20px; 
+    text-decoration: none; 
     text-indent: -9000px; 
     Z-INDEX: 20; 
-    POSITION: absolute; 
-    PADDING: 0; 
+    position: absolute; 
+    padding: 0; 
 }
 #star li.curr { 
-    BACKGROUND: url('../images/starsSmall.png') left 25px; 
-    FONT-SIZE: 1px; 
+    background: url('../images/starsSmall.png') left 25px; 
+    font-size: 1px; 
 }
 
-table.navLinks {margin-right: 20px;}
+table.navLinks {
+  margin-right: 20px;
+  background: none;
+}
 
 table.navLinks td a {
 	text-decoration: none;
@@ -249,18 +232,6 @@ tr th, tr th .internal, tr th .added, tr th .changed {
 	left: 0px;
 }
  
-body p.breadcrumbs {
-	margin: 0px;
-	padding: 0px;
-	line-height: 28px;
-}
-
-/*body #content {
-	position: static;
-	margin-top: 126px;
-	top: 0px;
-}*/
-
 body.sidebar #toolbar{left: 0px;}
 
 body.sidebar #toolbar-left{left: 0px;}
@@ -292,7 +263,7 @@ div.note *, div.caution *, div.important *, div.tip *, div.warning * {
 *[align = 'center']{ text-align: center;}
 
 #content .qandaset>table, #content .qandaset>table td, #content .calloutlist table, #content .calloutlist table td, #content .navfooter table, #content .navfooter table td {
-    border: 0px solid;
+    border: 0px none;
 }
 
 #sidebar { display: none }

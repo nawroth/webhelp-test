@@ -7,6 +7,7 @@
   <xsl:import href="html-params.xsl"/>
   <xsl:import href="head.xsl"/>
   <xsl:import href="syntaxhighlight.xsl"/>
+  <xsl:import href="xhtml-table.xsl"/>
 
   <!-- <xsl:import href="offline-footer.xsl"/> -->
 
@@ -38,7 +39,7 @@
         <xsl:with-param name="filename">
           <xsl:value-of select="concat($webhelp.base.dir,'/webhelp-tree.html')" />
         </xsl:with-param>
-        <xsl:with-param name="method" select="'html'" />
+        <xsl:with-param name="method" select="'xml'" />
         <xsl:with-param name="omit-xml-declaration" select="'yes'" />
         <xsl:with-param name="encoding" select="'utf-8'" />
         <xsl:with-param name="indent" select="'no'" />
@@ -240,7 +241,7 @@
     <xsl:param name="title">
       <xsl:apply-templates select="." mode="object.title.markup.textonly" />
     </xsl:param>
-    <!--  meta name="Section-title" content="{$title}" />  -->
+    <meta name="Section-title" content="{$title}" />
 
     <!-- <xsl:message> webhelp.tree.cookie.id = <xsl:value-of select="$webhelp.tree.cookie.id"/> +++ 
       <xsl:value-of select="count(//node())"/> $webhelp.indexer.language = <xsl:value-of select="$webhelp.indexer.language"/> 

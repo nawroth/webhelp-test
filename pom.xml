@@ -119,11 +119,6 @@
             section toc
             set toc,title
           </generateToc>
-          <tableFrameBorderColor>#ffffff</tableFrameBorderColor>
-          <tableCellBorderColor>#ffffff</tableCellBorderColor>
-          <tableFrameBorderThickness>0</tableFrameBorderThickness>
-          <htmlCellpadding>0</htmlCellpadding>
-          <htmlCellspacing>0</htmlCellspacing>
         </configuration>
         <dependencies>
           <dependency>

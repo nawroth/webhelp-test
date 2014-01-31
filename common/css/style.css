@@ -40,7 +40,7 @@ span.searchTab {
     background-color: #D8D8D8 !important;
 }
 .treeview .hover { color: black; }
-.filetree li span a { text-decoration: none; font-size: 12px; color: #517291; }
+.filetree li span a { text-decoration: none; font-size: 13px; color: #000000; }
 
 /* Override jquery-ui's default css customizations. These are supposed to take precedence over those.*/
 .ui-widget-content {
@@ -108,7 +108,7 @@ border: none; background: none; font-weight: none; color: none; }
     }
     
     #sidebar-wrapper {
-        background-color: #ededed;
+        background-color: #f0f0f0;
     }
 
 
@@ -147,12 +147,51 @@ a.navLinkNext i, a.navLinkUp i {
   margin-left: 0.5em;
 }
 
-body, .ui-widget {
-    font: 15px 'PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+table.navLinks, table.navLinks tr, table.navLinks th, table.navLinks td {
+  border: 0 none;
 }
 
-pre {
+body, .ui-widget {
+    font: 15px 'PT Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #000000;
+}
+
+pre, code {
     font: 14px 'Ubuntu Mono',Menlo,Consolas,Inconsolata,monospace;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0 none;
+  background: #f7f7f9;
+  border-radius: 4px;
+}
+
+td {
+  padding: 6px 6px 6px 4px;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  padding: 6px 6px 2px 4px;
+}
+
+tbody, th {
+  border-bottom: 2px solid #dddddd;
+  vertical-align: bottom;
+}
+
+td > p {
+  margin: 0;
+  padding: 0;
+}
+
+tfoot > tr > th {
+  padding: 0 0 0 8px;
+  text-align: left;
+  border-bottom: 0 none;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 span.contentsTab {

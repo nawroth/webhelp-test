@@ -29,6 +29,7 @@
 <xsl:template name="generate.html.title"/>
 
 <xsl:param name="table.borders.with.css" select="0"></xsl:param>
+<xsl:param name="default.table.frame" select="none"></xsl:param>
 <xsl:param name="html.cellspacing">0</xsl:param>
 <xsl:param name="html.cellpadding">0</xsl:param>
 

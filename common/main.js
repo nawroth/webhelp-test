@@ -139,14 +139,11 @@ function initialize() {
 	// 'ui-tabs-1' is the cookie name which
 	// is used for the persistence of the
 	// tabs.(Content/Search tab)
-	if ($.cookie('ui-tabs-1') === '1') { // search
-		// tab
-		// is
-		// active
+	if ($.cookie('ui-tabs-1') === '1') {
+    // search tab is active
 		if ($.cookie('textToSearch') != undefined
 				&& $.cookie('textToSearch').length > 0) {
-			document.getElementById('textToSearch').value = $
-					.cookie('textToSearch');
+			document.getElementById('textToSearch').value = $.cookie('textToSearch');
 			Verifie('searchForm');
 			searchHighlight($.cookie('textToSearch'));
 			$("#showHideHighlight").css("display", "block");
