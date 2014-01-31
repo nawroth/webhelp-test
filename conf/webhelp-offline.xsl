@@ -87,7 +87,6 @@
     <xsl:variable name="id" select="generate-id(.)" />
 
     <xsl:if test="not(self::d:index) or (self::d:index and not($generate.index = 0))">
-      <!--li style="white-space: pre; line-height: 0em;" -->
       <li>
         <span class="file">
           <a href="{substring-after($href, $base.dir)}" tabindex="1">

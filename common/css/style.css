@@ -16,12 +16,26 @@ input {
     margin-bottom: 5px;
     margin-top: 2px;
 }
-.folder {
-    display: block;
-    height: 22px;
-    padding-left: 20px;
-    background: transparent url("jquery/treeview/images/folder.gif") 0 0px no-repeat;
+
+#tree li {
+    line-height: 1.0;
+    padding: 3px 0 2px 16px;
 }
+
+#tree span {
+    display: table-cell;
+    padding-left: 0px;
+    background: none;
+}
+
+#tree i {
+    padding-right: 4px;
+    display: table-cell;
+    color: #222222;
+}
+
+#tree li > span > a { text-decoration: none; font-size: 13px; color: #000000; }
+
 span.contentsTab {
     padding-left: 20px;
     background: url("images/toc-icon.png") no-repeat 0 center;
@@ -39,8 +53,6 @@ span.searchTab {
 .webhelp-currentid {
     background-color: #D8D8D8 !important;
 }
-.treeview .hover { color: black; }
-.filetree li span a { text-decoration: none; font-size: 13px; color: #000000; }
 
 /* Override jquery-ui's default css customizations. These are supposed to take precedence over those.*/
 .ui-widget-content {

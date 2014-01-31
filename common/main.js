@@ -9,170 +9,201 @@
 var noAnimations = false;
 
 $(document).ready(
-		function() {
-			var $content = $('#content');
-			$('<div id="sidebar-wrapper"/>').insertAfter($content).load(
-					'webhelp-tree.html', initialize);
-			var layout = prepareLayout();
-			$('#showHideButton').click(function(event) {
-				event.preventDefault();
-				layout('west');
-			});
-		});
+    function() {
+      var $content = $('#content');
+      $('<div id="sidebar-wrapper"/>').insertAfter($content).load(
+          'webhelp-tree.html', initialize);
+      var layout = prepareLayout();
+      $('#showHideButton').click(function(event) {
+        event.preventDefault();
+        layout('west');
+      });
+    });
 
 function prepareLayout() {
-	return $('body').layout({
-		// Defining panes
-		west__paneSelector : "#sidebar-wrapper",
-		north__paneSelector : "#header",
-		center__paneSelector : "#content",
+  return $('body').layout({
+    // Defining panes
+    west__paneSelector : "#sidebar-wrapper",
+    north__paneSelector : "#header",
+    center__paneSelector : "#content",
 
-		// some resizing/toggling settings
-		// OVERRIDE the pane-default of 'resizable=true'
-		north__resizable : false,
-		north__spacing_open : 0,
-		// no resizer-bar when open (zero height)
-		west__slideable : false,
-		west__spacing_closed : 6,
-		west__spacing_open : 4,
-		// some pane-size settings
-		west__minSize : 280,
-		north__minSize : 99,
-		// some pane animation settings
-		west__animatePaneSizing : false,
-		west__fxSpeed_size : "normal",
-		west__fxSpeed_open : 10,
-		west__fxSettings_open : {
-			easing : ""
-		},
-		west__fxName_close : "none",
-		// automatic cookie load & save enabled by default
-		stateManagement__enabled : true,
-		stateManagement__cookie__name : "sidebar_state"
-	}).toggle;
+    // some resizing/toggling settings
+    // OVERRIDE the pane-default of 'resizable=true'
+    north__resizable : false,
+    north__spacing_open : 0,
+    // no resizer-bar when open (zero height)
+    west__slideable : false,
+    west__spacing_closed : 6,
+    west__spacing_open : 4,
+    // some pane-size settings
+    west__minSize : 280,
+    north__minSize : 99,
+    // some pane animation settings
+    west__animatePaneSizing : false,
+    west__fxSpeed_size : "normal",
+    west__fxSpeed_open : 10,
+    west__fxSettings_open : {
+      easing : ""
+    },
+    west__fxName_close : "none",
+    // automatic cookie load & save enabled by default
+    stateManagement__enabled : true,
+    stateManagement__cookie__name : "sidebar_state"
+  }).toggle;
 }
 
 function initialize() {
-	// Set the webhelp-currentid class on the current page in the treenav.
-	var foundPage = undefined;
-	var page = window.location.href;
+  // Set the webhelp-currentid class on the current page in the treenav.
+  var foundPage = undefined;
+  var page = window.location.href;
   if (window.location.hash) {
     // only look at the URL without the hash
     page = page.substr(0, page.length - window.location.hash.length);
   }
-	if (page) {
-		$('#tree').find('a').each(function() {
-			if (this.href === page) {
-				$(this).addClass('webhelp-currentid');
-				foundPage = this;
-				return false;
-			}
-		});
-	}
+  if (page) {
+    $('#tree').find('a').each(function() {
+      if (this.href === page) {
+        $(this).addClass('webhelp-currentid');
+        foundPage = this;
+        return false;
+      }
+    });
+  }
 /* works better without this.
-	// When you click on a link to an
-	// anchor, scroll down
-	// 105 px to cope with the fact that the
-	// banner
-	// hides the top 95px or so of the page.
-	// This code deals with the problem when
-	// you click on a link within a page.
-	$('a[href*=#]')
-			.click(
-					function() {
-						if (location.pathname.replace(/^\//, '') == this.pathname
-								.replace(/^\//, '')
-								&& location.hostname == this.hostname) {
-							var $target = $(this.hash);
-							$target = $target.length && $target
-									|| $('[name=' + this.hash.slice(1) + ']');
-							if (!(this.hash == "#searchDiv"
-									|| this.hash == "#treeDiv" || this.hash == "")
-									&& $target.length) {
-								var targetOffset = $target.offset().top - 120;
-								$('html,body').animate({
-									'scrollTop' : targetOffset
-								}, 200);
-								return false;
-							}
-						}
-					});
+  // When you click on a link to an
+  // anchor, scroll down
+  // 105 px to cope with the fact that the
+  // banner
+  // hides the top 95px or so of the page.
+  // This code deals with the problem when
+  // you click on a link within a page.
+  $('a[href*=#]')
+      .click(
+          function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname
+                .replace(/^\//, '')
+                && location.hostname == this.hostname) {
+              var $target = $(this.hash);
+              $target = $target.length && $target
+                  || $('[name=' + this.hash.slice(1) + ']');
+              if (!(this.hash == "#searchDiv"
+                  || this.hash == "#treeDiv" || this.hash == "")
+                  && $target.length) {
+                var targetOffset = $target.offset().top - 120;
+                $('html,body').animate({
+                  'scrollTop' : targetOffset
+                }, 200);
+                return false;
+              }
+            }
+          });
 */
-	// $("#showHideHighlight").button();
-	// //add jquery button styling to 'Go'
-	// button
-	// Generate tabs in nav-pane with JQuery
-	$(function() {
-		$("#tabs").tabs({
-			cookie : {
-				expires : 2
-			// store cookie for 2 days.
-			}
-		});
-	});
+  // $("#showHideHighlight").button();
+  // //add jquery button styling to 'Go'
+  // button
+  // Generate tabs in nav-pane with JQuery
+  $(function() {
+    $("#tabs").tabs({
+      cookie : {
+        expires : 2
+      // store cookie for 2 days.
+      }
+    });
+  });
 
-	// Generate the tree
-	$("#ulTreeDiv").attr("style", "");
-	$("#tree").treeview({
-		collapsed : true,
-		animated : false,
-		control : "#sidetreecontrol",
-		persist : "cookie"
-	});
+  // Generate the tree
+  $("#ulTreeDiv").attr("style", "");
+  $("#tree").treeview({
+    collapsed : true,
+    animated : false,
+    control : "#sidetreecontrol",
+    persist : "cookie",
+    toggle : toggleMenuItem
+  });
+  
+  function toggleMenuItem(num, ul) {
+    var $li = $(ul.parentNode);
+    var $icon = $li.children("i");
+    setIcon($li, $icon);
+  }
+  
+  function setIcon($li, $icon) {
+    if ($li.hasClass("expandable")) {
+      $icon.removeClass("fa-folder-open-o").addClass("fa-folder-o");
+    }
+    else {
+      $icon.removeClass("fa-folder-o").addClass("fa-folder-open-o");
+    } 
+  }
 
-	// after toc fully styled, display it.
-	// Until loading, a 'loading' image will
-	// be displayed
-	$("#tocLoading").attr("style", "display:none;");
-	// $("#ulTreeDiv").attr("style","display:block;");
+  // after toc fully styled, display it.
+  // Until loading, a 'loading' image will
+  // be displayed
+  $("#tocLoading").attr("style", "display:none;");
+  // $("#ulTreeDiv").attr("style","display:block;");
 
-	// .searchButton is the css class
-	// applied to 'Go' button
-	$(function() {
-		$("button", ".searchButton").button();
+  // .searchButton is the css class
+  // applied to 'Go' button
+  $(function() {
+    $("button", ".searchButton").button();
 
-		$("button", ".searchButton").click(function() {
-			return false;
-		});
-	});
+    $("button", ".searchButton").click(function() {
+      return false;
+    });
+  });
 
-	// 'ui-tabs-1' is the cookie name which
-	// is used for the persistence of the
-	// tabs.(Content/Search tab)
-	if ($.cookie('ui-tabs-1') === '1') {
+  // 'ui-tabs-1' is the cookie name which
+  // is used for the persistence of the
+  // tabs.(Content/Search tab)
+  if ($.cookie('ui-tabs-1') === '1') {
     // search tab is active
-		if ($.cookie('textToSearch') != undefined
-				&& $.cookie('textToSearch').length > 0) {
-			document.getElementById('textToSearch').value = $.cookie('textToSearch');
-			Verifie('searchForm');
-			searchHighlight($.cookie('textToSearch'));
-			$("#showHideHighlight").css("display", "block");
-		}
-	}
+    if ($.cookie('textToSearch') != undefined
+        && $.cookie('textToSearch').length > 0) {
+      document.getElementById('textToSearch').value = $.cookie('textToSearch');
+      Verifie('searchForm');
+      searchHighlight($.cookie('textToSearch'));
+      $("#showHideHighlight").css("display", "block");
+    }
+  }
 
-	syncToc(foundPage);
-	// Synchronize the toc tree
-	// with the content pane,
-	// when loading the page.
-	// $("#doSearch").button(); //add jquery
-	// button styling to 'Go' button
+  syncToc(foundPage);
+  // Synchronize the toc tree
+  // with the content pane,
+  // when loading the page.
+  // $("#doSearch").button(); //add jquery
+  // button styling to 'Go' button
 
-	// When you click on a link to an
-	// anchor, scroll down
-	// 120 px to cope with the fact that the
-	// banner
-	// hides the top 95px or so of the page.
-	// This code deals with the problem when
-	// you click on a link from another
-	// page.
-	var hash = window.location.hash;
-	if (hash) {
-		var targetOffset = $(hash).offset().top - 120;
-		$('html,body').animate({
-			'scrollTop' : targetOffset
-		}, 200);
-		return false;
-	}
+  // add folder look
+  var $ICON = $('<i class="fa"/>');
+  $("#tree li").each(function(){
+    var $li = $(this);
+    var $file = $li.children("span.file");
+    if ($file.siblings("ul").size() > 0) {
+      $file.addClass("folder").removeClass("file");
+      var $icon = $ICON.clone().insertBefore($file);
+      setIcon($li, $icon);
+    }
+    else {
+      $ICON.clone().addClass("fa-file-o").insertBefore($file);
+    }
+  });
+
+  // When you click on a link to an
+  // anchor, scroll down
+  // 120 px to cope with the fact that the
+  // banner
+  // hides the top 95px or so of the page.
+  // This code deals with the problem when
+  // you click on a link from another
+  // page.
+  var hash = window.location.hash;
+  if (hash) {
+    var targetOffset = $(hash).offset().top - 120;
+    $('html,body').animate({
+      'scrollTop' : targetOffset
+    }, 200);
+    return false;
+  }
 }
 
 /**
@@ -181,14 +212,14 @@ function initialize() {
  * empty.
  */
 function doSearch() {
-	// 'ui-tabs-1' is the cookie name which is used for the persistence of the
-	// tabs.(Content/Search tab)
-	if ($.cookie('textToSearch') != undefined
-			&& $.cookie('textToSearch').length > 0) {
-		document.getElementById('textToSearch').value = $
-				.cookie('textToSearch');
-		Verifie('searchForm');
-	}
+  // 'ui-tabs-1' is the cookie name which is used for the persistence of the
+  // tabs.(Content/Search tab)
+  if ($.cookie('textToSearch') != undefined
+      && $.cookie('textToSearch').length > 0) {
+    document.getElementById('textToSearch').value = $
+        .cookie('textToSearch');
+    Verifie('searchForm');
+  }
 }
 
 /**
@@ -198,75 +229,75 @@ function syncToc(a_) {
   if (a_ === undefined) {
     return;
   }
-	var a = a_.parentNode.parentNode;
-	if (a === undefined) {
-		return;
-	}
-	// Expanding the child sections of the selected node.
-	var nodeClass = a.getAttribute("class");
-	if (nodeClass != null && !nodeClass.match(/collapsable/)) {
-		a.setAttribute("class", "collapsable");
-		// remove display:none; css style from <ul> block in the selected
-		// node.
-		var ulNode = a.getElementsByTagName("ul")[0];
-		if (ulNode != undefined) {
-			if (ulNode.hasAttribute("style")) {
-				ulNode
-						.setAttribute("style",
-								"display: block; background-color: #D8D8D8 !important;");
-			} else {
-				var ulStyle = document.createAttribute("style");
-				ulStyle.nodeValue = "display: block; background-color: #D8D8D8 !important;";
-				ulNode.setAttributeNode(ulStyle);
-			}
-		}
-		// adjust tree's + sign to -
-		var divNode = a.getElementsByTagName("div")[0];
-		if (divNode != undefined) {
-			if (divNode.hasAttribute("class")) {
-				divNode.setAttribute("class", "hitarea collapsable-hitarea");
-			} else {
-				var divClass = document.createAttribute("class");
-				divClass.nodeValue = "hitarea collapsable-hitarea";
-				divNode.setAttributeNode(divClass);
-			}
-		}
-		// set persistence cookie when a node is auto expanded
-		// setCookieForExpandedNode("webhelp-currentid");
-	}
-	var b = a.getElementsByTagName("a")[0];
+  var a = a_.parentNode.parentNode;
+  if (a === undefined) {
+    return;
+  }
+  // Expanding the child sections of the selected node.
+  var nodeClass = a.getAttribute("class");
+  if (nodeClass != null && !nodeClass.match(/collapsable/)) {
+    a.setAttribute("class", "collapsable");
+    // remove display:none; css style from <ul> block in the selected
+    // node.
+    var ulNode = a.getElementsByTagName("ul")[0];
+    if (ulNode != undefined) {
+      if (ulNode.hasAttribute("style")) {
+        ulNode
+            .setAttribute("style",
+                "display: block; background-color: #D8D8D8 !important;");
+      } else {
+        var ulStyle = document.createAttribute("style");
+        ulStyle.nodeValue = "display: block; background-color: #D8D8D8 !important;";
+        ulNode.setAttributeNode(ulStyle);
+      }
+    }
+    // adjust tree's + sign to -
+    var divNode = a.getElementsByTagName("div")[0];
+    if (divNode != undefined) {
+      if (divNode.hasAttribute("class")) {
+        divNode.setAttribute("class", "hitarea collapsable-hitarea");
+      } else {
+        var divClass = document.createAttribute("class");
+        divClass.nodeValue = "hitarea collapsable-hitarea";
+        divNode.setAttributeNode(divClass);
+      }
+    }
+    // set persistence cookie when a node is auto expanded
+    // setCookieForExpandedNode("webhelp-currentid");
+  }
+  var b = a.getElementsByTagName("a")[0];
 
-	if (b != undefined) {
-		// Setting the background for selected node.
-		var style = a.getAttribute("style", 2);
-		if (style != null && !style.match(/background-color: Background;/)) {
-			a.setAttribute("style", "background-color: #D8D8D8;  " + style);
-			b.setAttribute("style", "color: black;");
-		} else if (style != null) {
-			a.setAttribute("style", "background-color: #D8D8D8;  " + style);
-			b.setAttribute("style", "color: black;");
-		} else {
-			a.setAttribute("style", "background-color: #D8D8D8;  ");
-			b.setAttribute("style", "color: black;");
-		}
-	}
+  if (b != undefined) {
+    // Setting the background for selected node.
+    var style = a.getAttribute("style", 2);
+    if (style != null && !style.match(/background-color: Background;/)) {
+      a.setAttribute("style", "background-color: #D8D8D8; " + style);
+      b.setAttribute("style", "color: black;");
+    } else if (style != null) {
+      a.setAttribute("style", "background-color: #D8D8D8; " + style);
+      b.setAttribute("style", "color: black;");
+    } else {
+      a.setAttribute("style", "background-color: #D8D8D8; ");
+      b.setAttribute("style", "color: black;");
+    }
+  }
 
-	// shows the node related to current content.
-	// goes a recursive call from current node to ancestor nodes, displaying
-	// all of them.
-	while (a.parentNode && a.parentNode.nodeName) {
-		var parentNode = a.parentNode;
-		var nodeName = parentNode.nodeName;
+  // shows the node related to current content.
+  // goes a recursive call from current node to ancestor nodes, displaying
+  // all of them.
+  while (a.parentNode && a.parentNode.nodeName) {
+    var parentNode = a.parentNode;
+    var nodeName = parentNode.nodeName;
 
-		if (nodeName.toLowerCase() == "ul") {
-			parentNode.setAttribute("style", "display: block;");
-		} else if (nodeName.toLocaleLowerCase() == "li") {
-			parentNode.setAttribute("class", "collapsable");
-			parentNode.firstChild.setAttribute("class",
-					"hitarea collapsable-hitarea ");
-		}
-		a = parentNode;
-	}
+    if (nodeName.toLowerCase() == "ul") {
+      parentNode.setAttribute("style", "display: block;");
+    } else if (nodeName.toLocaleLowerCase() == "li") {
+      parentNode.setAttribute("class", "collapsable");
+      parentNode.firstChild.setAttribute("class",
+          "hitarea collapsable-hitarea ");
+    }
+    a = parentNode;
+  }
 }
 /*
  * function setCookieForExpandedNode(nodeName) { var tocDiv =
@@ -290,40 +321,40 @@ function syncToc(a_) {
  * 
  */
 function showHideToc() {
-	var showHideButton = $("#showHideButton");
-	var leftNavigation = $("#sidebar"); // hide the parent div of
-	// leftnavigation, ie sidebar
-	var content = $("#content");
-	var animeTime = 75;
+  var showHideButton = $("#showHideButton");
+  var leftNavigation = $("#sidebar"); // hide the parent div of
+  // leftnavigation, ie sidebar
+  var content = $("#content");
+  var animeTime = 75;
 
-	if (showHideButton != undefined && showHideButton.hasClass("pointLeft")) {
-		// Hide TOC
-		showHideButton.removeClass('pointLeft').addClass('pointRight');
+  if (showHideButton != undefined && showHideButton.hasClass("pointLeft")) {
+    // Hide TOC
+    showHideButton.removeClass('pointLeft').addClass('pointRight');
 
-		if (noAnimations) {
-			leftNavigation.css("display", "none");
-			content.css("margin", "125px 0 0 0");
-		} else {
-			leftNavigation.hide(animeTime);
-			content.animate({
-				"margin-left" : 0
-			}, animeTime);
-		}
-		showHideButton.attr("title", "Show Sidebar");
-	} else {
-		// Show the TOC
-		showHideButton.removeClass('pointRight').addClass('pointLeft');
-		if (noAnimations) {
-			content.css("margin", "125px 0 0 280px");
-			leftNavigation.css("display", "block");
-		} else {
-			content.animate({
-				"margin-left" : '280px'
-			}, animeTime);
-			leftNavigation.show(animeTime);
-		}
-		showHideButton.attr("title", "Hide Sidebar");
-	}
+    if (noAnimations) {
+      leftNavigation.css("display", "none");
+      content.css("margin", "125px 0 0 0");
+    } else {
+      leftNavigation.hide(animeTime);
+      content.animate({
+        "margin-left" : 0
+      }, animeTime);
+    }
+    showHideButton.attr("title", "Show Sidebar");
+  } else {
+    // Show the TOC
+    showHideButton.removeClass('pointRight').addClass('pointLeft');
+    if (noAnimations) {
+      content.css("margin", "125px 0 0 280px");
+      leftNavigation.css("display", "block");
+    } else {
+      content.animate({
+        "margin-left" : '280px'
+      }, animeTime);
+      leftNavigation.show(animeTime);
+    }
+    showHideButton.attr("title", "Hide Sidebar");
+  }
 }
 
 /**
@@ -331,47 +362,47 @@ function showHideToc() {
  */
 var highlightOn = true;
 function searchHighlight(searchText_) {
-	var searchText = searchText_;
-	highlightOn = true;
-	if (searchText != undefined) {
-		var wList;
-		var sList = new Array(); // stem list
-		// Highlight the search terms
-		searchText = searchText.toLowerCase().replace(/<\//g, "_st_").replace(
-				/\$_/g, "_di_").replace(/\.|%2C|%3B|%21|%3A|@|\/|\*/g, " ")
-				.replace(/(%20)+/g, " ").replace(/_st_/g, "</").replace(
-						/_di_/g, "%24_");
-		searchText = searchText.replace(/  +/g, " ");
-		searchText = searchText.replace(/ $/, "").replace(/^ /, "");
+  var searchText = searchText_;
+  highlightOn = true;
+  if (searchText != undefined) {
+    var wList;
+    var sList = new Array(); // stem list
+    // Highlight the search terms
+    searchText = searchText.toLowerCase().replace(/<\//g, "_st_").replace(
+        /\$_/g, "_di_").replace(/\.|%2C|%3B|%21|%3A|@|\/|\*/g, " ")
+        .replace(/(%20)+/g, " ").replace(/_st_/g, "</").replace(
+            /_di_/g, "%24_");
+    searchText = searchText.replace(/ +/g, " ");
+    searchText = searchText.replace(/ $/, "").replace(/^ /, "");
 
-		wList = searchText.split(" ");
-		$("#content").highlight(wList); // Highlight the search input
+    wList = searchText.split(" ");
+    $("#content").highlight(wList); // Highlight the search input
 
-		if (typeof stemmer != "undefined") {
-			// Highlight the stems
-			for ( var i = 0; i < wList.length; i++) {
-				var stemW = stemmer(wList[i]);
-				sList.push(stemW);
-			}
-		} else {
-			sList = wList;
-		}
-		$("#content").highlight(sList); // Highlight the search input's all
-		// stems
-	}
+    if (typeof stemmer != "undefined") {
+      // Highlight the stems
+      for ( var i = 0; i < wList.length; i++) {
+        var stemW = stemmer(wList[i]);
+        sList.push(stemW);
+      }
+    } else {
+      sList = wList;
+    }
+    $("#content").highlight(sList); // Highlight the search input's all
+    // stems
+  }
 }
 
 function searchUnhighlight() {
-	highlightOn = false;
-	// unhighlight the search input's all stems
-	$("#content").unhighlight();
-	$("#content").unhighlight();
+  highlightOn = false;
+  // unhighlight the search input's all stems
+  $("#content").unhighlight();
+  $("#content").unhighlight();
 }
 
 function toggleHighlight() {
-	if (highlightOn) {
-		searchUnhighlight();
-	} else {
-		searchHighlight($.cookie('textToSearch'));
-	}
+  if (highlightOn) {
+    searchUnhighlight();
+  } else {
+    searchHighlight($.cookie('textToSearch'));
+  }
 }
