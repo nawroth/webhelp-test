@@ -278,7 +278,7 @@
       css contents inside these default jquery css files. I thought of keeping them intact for easier maintenance! -->
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
     <link rel="stylesheet" type="text/css"
-      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
+      href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/style.css" />
@@ -300,7 +300,7 @@
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.highlight.js">
     </script>
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.cookie.js">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js">
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/treeview/jquery.treeview.min.js">
     </script>
