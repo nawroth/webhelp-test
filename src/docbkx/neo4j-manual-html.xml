@@ -7179,7 +7179,7 @@ RETURN keanu</programlisting>
 <table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">keanu</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row
 </entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Nodes created: 1
 </entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Properties set: 2
-</entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Labels added: 1</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>Node[8]{created:1390989343699,name:"Keanu Reeves"}</literal></simpara></entry></row></tbody></tgroup></table>
+</entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Labels added: 1</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>Node[8]{created:1391421339277,name:"Keanu Reeves"}</literal></simpara></entry></row></tbody></tgroup></table>
 <formalpara role="cypherconsole"><title>Try this query live</title><para><database>create constraint on (n:`Person`) assert n.`name` is unique
 create constraint on (n:`Person`) assert n.`role` is unique
 create (_0:`Person` {`name`:"Oliver Stone"})
@@ -7247,7 +7247,7 @@ RETURN keanu</programlisting>
 <table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">keanu</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row
 </entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Nodes created: 1
 </entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Properties set: 2
-</entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Labels added: 1</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>Node[8]{created:1390989346100,name:"Keanu Reeves"}</literal></simpara></entry></row></tbody></tgroup></table>
+</entry></row><row><entry align="left" valign="top" namest="col1" nameend="col1">Labels added: 1</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>Node[8]{created:1391421341689,name:"Keanu Reeves"}</literal></simpara></entry></row></tbody></tgroup></table>
 <formalpara role="cypherconsole"><title>Try this query live</title><para><database>create constraint on (n:`Person`) assert n.`name` is unique
 create constraint on (n:`Person`) assert n.`role` is unique
 create (_0:`Person` {`name`:"Oliver Stone"})
@@ -8211,7 +8211,7 @@ create _4-[:`KNOWS`]-&gt;_0
 <programlisting language="cypher" linenumbering="unnumbered">RETURN timestamp()</programlisting>
 </para></formalpara>
 <simpara>The time in milliseconds is returned.</simpara>
-<table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">timestamp()</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>1390989351172</literal></simpara></entry></row></tbody></tgroup></table>
+<table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">timestamp()</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>1391421346769</literal></simpara></entry></row></tbody></tgroup></table>
 <formalpara role="cypherconsole"><title>Try this query live</title><para><database>create (_0 {`age`:54, `eyes`:"brown", `name`:"Daniel"})
 create (_1:`Spouse` {`age`:41, `array`:["one", "two", "three"], `eyes`:"blue", `name`:"Eskil"})
 create (_2:`foo`:`bar` {`age`:38, `eyes`:"brown", `name`:"Alice"})
@@ -9138,7 +9138,7 @@ create _4-[:`KNOWS`]-&gt;_0
 <programlisting language="cypher" linenumbering="unnumbered">RETURN rand() AS x1</programlisting>
 </para></formalpara>
 <simpara>A random number is returned.</simpara>
-<table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">x1</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>0.7662709332538921</literal></simpara></entry></row></tbody></tgroup></table>
+<table tabstyle="queryresult table" role="NotInToc" frame="none" rowsep="1" colsep="1"><title>Result</title><tgroup cols="1"><colspec colname="col1"/><thead><row><entry align="left" valign="top">x1</entry></row></thead><tfoot><row><entry align="left" valign="top" namest="col1" nameend="col1">1 row</entry></row></tfoot><tbody><row><entry align="left" valign="top"><simpara><literal>0.5019242547761651</literal></simpara></entry></row></tbody></tgroup></table>
 <formalpara role="cypherconsole"><title>Try this query live</title><para><database>create (_0 {`age`:54, `eyes`:"brown", `name`:"Daniel"})
 create (_1:`Spouse` {`age`:41, `array`:["one", "two", "three"], `eyes`:"blue", `name`:"Eskil"})
 create (_2:`foo`:`bar` {`age`:38, `eyes`:"brown", `name`:"Alice"})
@@ -10531,7 +10531,7 @@ your statements, as well as the location of your open transaction.</simpara>
     } ]
   } ],
   "transaction" : {
-    "expires" : "Wed, 29 Jan 2014 10:10:17 +0000"
+    "expires" : "Mon, 03 Feb 2014 10:10:01 +0000"
   },
   "errors" : [ ]
 }</programlisting>
@@ -10586,7 +10586,7 @@ statements, and keeps the transaction open by resetting the transaction timeout.
     } ]
   } ],
   "transaction" : {
-    "expires" : "Wed, 29 Jan 2014 10:10:17 +0000"
+    "expires" : "Mon, 03 Feb 2014 10:10:01 +0000"
   },
   "errors" : [ ]
 }</programlisting>
@@ -10658,7 +10658,7 @@ give back full Neo4j Rest API representations of the Neo4j Nodes, Relationships 
     } ]
   } ],
   "transaction" : {
-    "expires" : "Wed, 29 Jan 2014 10:10:13 +0000"
+    "expires" : "Mon, 03 Feb 2014 10:09:57 +0000"
   },
   "errors" : [ ]
 }</programlisting>
@@ -10708,7 +10708,7 @@ expire as an RFC1123 formatted timestamp value in the &#8220;transaction&#8221; 
   "commit" : "http://localhost:7474/db/data/transaction/2/commit",
   "results" : [ ],
   "transaction" : {
-    "expires" : "Wed, 29 Jan 2014 10:10:16 +0000"
+    "expires" : "Mon, 03 Feb 2014 10:10:00 +0000"
   },
   "errors" : [ ]
 }</programlisting>
@@ -12200,7 +12200,7 @@ If no array exists already, the server will reject the request.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
-<programlisting language="javascript" linenumbering="unnumbered">[ "awesome", "name1", "since", "kvkey2", "array1", "name2", "key", "kvkey1", "age", "value", "foo", "some-key", "prop", "例子öäüÖÄÜß", "non-existent", "firstName", "ID", "Name", "children", "cost", "position", "array2", "names", "happy", "array", "sequence", "name", "a" ]</programlisting>
+<programlisting language="javascript" linenumbering="unnumbered">[ "sequence", "some-key", "array2", "kvkey2", "position", "Name", "name1", "names", "awesome", "happy", "firstName", "name2", "array", "value", "例子öäüÖÄÜß", "foo", "age", "non-existent", "array1", "since", "a", "name", "children", "kvkey1", "ID", "key", "prop", "cost" ]</programlisting>
 </section>
 </section>
 <section id="rest-api-nodes">
@@ -12256,8 +12256,8 @@ If no array exists already, the server will reject the request.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/8/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/8/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/8/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/8/relationships/all",
   "property" : "http://localhost:7474/db/data/node/8/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/8/relationships/all",
   "self" : "http://localhost:7474/db/data/node/8",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/8/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/8/properties",
@@ -12332,8 +12332,8 @@ If no array exists already, the server will reject the request.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/4/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/4/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/4/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/4/relationships/all",
   "property" : "http://localhost:7474/db/data/node/4/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/4/relationships/all",
   "self" : "http://localhost:7474/db/data/node/4",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/4/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/4/properties",
@@ -12393,8 +12393,8 @@ operations for getting properties and relationships.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/30/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/30/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/30/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/30/relationships/all",
   "property" : "http://localhost:7474/db/data/node/30/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/30/relationships/all",
   "self" : "http://localhost:7474/db/data/node/30",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/30/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/30/properties",
@@ -14411,7 +14411,7 @@ index is available, all nodes with the given label will be filtered through to f
 </simpara>
 </listitem>
 </itemizedlist>
-<programlisting language="javascript" linenumbering="unnumbered">[ "mylabel", "Person", "Actor", "Director", "novice", "chef", "expert", "person", "user", "prog", "SomeLabel", "coder" ]</programlisting>
+<programlisting language="javascript" linenumbering="unnumbered">[ "SomeLabel", "mylabel", "Person", "chef", "expert", "Actor", "coder", "Director", "person", "user", "prog", "novice" ]</programlisting>
 </section>
 </section>
 <section id="rest-api-schema-indexes">
@@ -15406,7 +15406,7 @@ or <literal>fullpath</literal>, can be targeted.</simpara>
 </listitem>
 <listitem>
 <simpara>
-<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/297/paged/traverse/node/d5fbcbff946b4abaa5825198999ba4ca</literal>
+<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/297/paged/traverse/node/511009ff717d4bea909455d660300d79</literal>
 </simpara>
 </listitem>
 </itemizedlist>
@@ -15677,7 +15677,7 @@ expect a 404 response as the traverser is disposed by the server.</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
-<emphasis role="strong"><literal>GET</literal></emphasis>  <literal>http://localhost:7474/db/data/node/330/paged/traverse/node/4abcdb1d75de4f0e8d108070aacc3b93</literal>
+<emphasis role="strong"><literal>GET</literal></emphasis>  <literal>http://localhost:7474/db/data/node/330/paged/traverse/node/c8020d65ada944c89e2137b5b1af6644</literal>
 </simpara>
 </listitem>
 <listitem>
@@ -16152,7 +16152,7 @@ appropriate. This can be set by adding a <literal>pageSize</literal> query param
 </listitem>
 <listitem>
 <simpara>
-<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/33/paged/traverse/node/df12b766cb774d958fc4593f13e83992</literal>
+<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/33/paged/traverse/node/f78d17e1040c4ab6856639f4ce87647f</literal>
 </simpara>
 </listitem>
 </itemizedlist>
@@ -16230,7 +16230,7 @@ parameter with the number of seconds the paged traverser should last.</simpara>
 </listitem>
 <listitem>
 <simpara>
-<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/807/paged/traverse/node/284bfa5522484ff39f8bac6eabc0e51e</literal>
+<emphasis role="strong"><literal>Location:</literal></emphasis> <literal>http://localhost:7474/db/data/node/807/paged/traverse/node/7f4609626ca64b318df11d96d92ca5df</literal>
 </simpara>
 </listitem>
 </itemizedlist>
@@ -16980,8 +16980,8 @@ descriptions:</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/31/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/31/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/31/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/31/relationships/all",
     "property" : "http://localhost:7474/db/data/node/31/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/31/relationships/all",
     "self" : "http://localhost:7474/db/data/node/31",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/31/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/31/properties",
@@ -17004,8 +17004,8 @@ descriptions:</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/32/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/32/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/32/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/32/relationships/all",
     "property" : "http://localhost:7474/db/data/node/32/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/32/relationships/all",
     "self" : "http://localhost:7474/db/data/node/32",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/32/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/32/properties",
@@ -17028,8 +17028,8 @@ descriptions:</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/33/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/33/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/33/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/33/relationships/all",
     "property" : "http://localhost:7474/db/data/node/33/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/33/relationships/all",
     "self" : "http://localhost:7474/db/data/node/33",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/33/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/33/properties",
@@ -17137,8 +17137,8 @@ into JSON strings in subsequent job descriptions.</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/23/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/23/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/23/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/23/relationships/all",
     "property" : "http://localhost:7474/db/data/node/23/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/23/relationships/all",
     "self" : "http://localhost:7474/db/data/node/23",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/23/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/23/properties",
@@ -17161,8 +17161,8 @@ into JSON strings in subsequent job descriptions.</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/24/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/24/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/24/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/24/relationships/all",
     "property" : "http://localhost:7474/db/data/node/24/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/24/relationships/all",
     "self" : "http://localhost:7474/db/data/node/24",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/24/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/24/properties",
@@ -17301,8 +17301,8 @@ into JSON strings in subsequent job descriptions.</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/100/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/100/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/100/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/100/relationships/all",
     "property" : "http://localhost:7474/db/data/node/100/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/100/relationships/all",
     "self" : "http://localhost:7474/db/data/node/100",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/100/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/100/properties",
@@ -17325,8 +17325,8 @@ into JSON strings in subsequent job descriptions.</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/101/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/101/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/101/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/101/relationships/all",
     "property" : "http://localhost:7474/db/data/node/101/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/101/relationships/all",
     "self" : "http://localhost:7474/db/data/node/101",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/101/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/101/properties",
@@ -17350,8 +17350,8 @@ into JSON strings in subsequent job descriptions.</simpara>
     "outgoing_relationships" : "http://localhost:7474/db/data/node/102/relationships/out",
     "traverse" : "http://localhost:7474/db/data/node/102/traverse/{returnType}",
     "all_typed_relationships" : "http://localhost:7474/db/data/node/102/relationships/all/{-list|&amp;|types}",
-    "all_relationships" : "http://localhost:7474/db/data/node/102/relationships/all",
     "property" : "http://localhost:7474/db/data/node/102/properties/{key}",
+    "all_relationships" : "http://localhost:7474/db/data/node/102/relationships/all",
     "self" : "http://localhost:7474/db/data/node/102",
     "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/102/relationships/out/{-list|&amp;|types}",
     "properties" : "http://localhost:7474/db/data/node/102/properties",
@@ -17603,8 +17603,8 @@ a new one.</simpara></caution>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/83/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/83/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/83/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/83/relationships/all",
   "property" : "http://localhost:7474/db/data/node/83/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/83/relationships/all",
   "self" : "http://localhost:7474/db/data/node/83",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/83/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/83/properties",
@@ -17877,8 +17877,8 @@ URL Parameter <literal>uniqueness=create_or_fail</literal>: Create a new node/re
   "outgoing_relationships" : "http://localhost:7474/db/data/node/97/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/97/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/97/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/97/relationships/all",
   "property" : "http://localhost:7474/db/data/node/97/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/97/relationships/all",
   "self" : "http://localhost:7474/db/data/node/97",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/97/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/97/properties",
@@ -17950,8 +17950,8 @@ already existing node.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/87/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/87/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/87/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/87/relationships/all",
   "property" : "http://localhost:7474/db/data/node/87/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/87/relationships/all",
   "self" : "http://localhost:7474/db/data/node/87",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/87/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/87/properties",
@@ -18022,8 +18022,8 @@ example, no existing indexed node is found and a new node is created.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/96/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/96/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/96/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/96/relationships/all",
   "property" : "http://localhost:7474/db/data/node/96/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/96/relationships/all",
   "self" : "http://localhost:7474/db/data/node/96",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/96/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/96/properties",
@@ -18090,8 +18090,8 @@ is found and an error is returned.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/81/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/81/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/81/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/81/relationships/all",
   "property" : "http://localhost:7474/db/data/node/81/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/81/relationships/all",
   "self" : "http://localhost:7474/db/data/node/81",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/81/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/81/properties",
@@ -18159,8 +18159,8 @@ index.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/92/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/92/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/92/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/92/relationships/all",
   "property" : "http://localhost:7474/db/data/node/92/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/92/relationships/all",
   "self" : "http://localhost:7474/db/data/node/92",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/92/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/92/properties",
@@ -18220,8 +18220,8 @@ as we have set the uniqueness to <literal>create_or_fail</literal>.</simpara>
   "outgoing_relationships" : "http://localhost:7474/db/data/node/94/relationships/out",
   "traverse" : "http://localhost:7474/db/data/node/94/traverse/{returnType}",
   "all_typed_relationships" : "http://localhost:7474/db/data/node/94/relationships/all/{-list|&amp;|types}",
-  "all_relationships" : "http://localhost:7474/db/data/node/94/relationships/all",
   "property" : "http://localhost:7474/db/data/node/94/properties/{key}",
+  "all_relationships" : "http://localhost:7474/db/data/node/94/relationships/all",
   "self" : "http://localhost:7474/db/data/node/94",
   "outgoing_typed_relationships" : "http://localhost:7474/db/data/node/94/relationships/out/{-list|&amp;|types}",
   "properties" : "http://localhost:7474/db/data/node/94/properties",
@@ -24973,7 +24973,7 @@ all open transactions.</simpara>
  | No data returned. |
  +-------------------+
  Indexes added: 1
- 1032 ms
+ 1034 ms
 
 
  # create one labeled node and a relationship
@@ -24985,7 +24985,7 @@ all open transactions.</simpara>
  Relationships created: 1
  Properties set: 1
  Labels added: 2
- 354 ms
+ 360 ms
 
 
  # Export the whole database including indexes
@@ -25021,7 +25021,7 @@ all open transactions.</simpara>
  | Node[0]{name:"Jon"} |
  +---------------------+
  1 row
- 331 ms
+ 330 ms
 
 
  # make an incoming relationship of type LIKES, create the end node with the node properties specified.
@@ -25200,7 +25200,7 @@ relationship_keys_indexable=ROOT,KNOWS,CODED_BY</programlisting>
  | "Thomas Andersson" |
  +--------------------+
  3 rows
- 279 ms
+ 280 ms
 
 
  # Morpheus' friends, looking up Morpheus by name in the Neo4j autoindex
@@ -25213,7 +25213,7 @@ relationship_keys_indexable=ROOT,KNOWS,CODED_BY</programlisting>
  | "Thomas Andersson" |
  +--------------------+
  3 rows
- 245 ms</programlisting>
+ 246 ms</programlisting>
 </section>
 </chapter>
 </part>

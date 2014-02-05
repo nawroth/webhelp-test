@@ -76,21 +76,35 @@
         <executions>
           <execution>
             <id>generate-webhelp-html</id>
-            <phase>prepare-package</phase>
+            <phase>none</phase>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
+            <configuration>
+              <includes>neo4j-manual-html.xml</includes>
+              <admonGraphicsPath>images/icons/admon/</admonGraphicsPath>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-pdf</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>generate-pdf</goal>
+            </goals>
+            <configuration>
+              <includes>neo4j-manual-shortinfo.xml</includes>
+            </configuration>
           </execution>
         </executions>
         <configuration>
-          <includes>neo4j-manual-html.xml</includes>
           <xincludeSupported>true</xincludeSupported>
           <webhelpCustomization>conf/webhelp-offline.xsl</webhelpCustomization>
+          <foCustomization>conf/fo.xsl</foCustomization>
+          <externalFOPConfiguration>conf/fop.xml</externalFOPConfiguration>
           <glossarySort>true</glossarySort>
           <tocMaxDepth>2</tocMaxDepth>
           <generateSectionTocLevel>1</generateSectionTocLevel>
           <admonGraphics>true</admonGraphics>
-          <admonGraphicsPath>images/icons/admon/</admonGraphicsPath>
           <admonGraphicsExtension>.svg</admonGraphicsExtension>
           <htmlExt>.html</htmlExt>
           <chunkerOutputOmitXmlDeclaration>yes</chunkerOutputOmitXmlDeclaration>
