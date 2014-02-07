@@ -24,7 +24,7 @@
     <docs.images>${project.build.outputDirectory}/images</docs.images>
     <docs.tools>${project.build.directory}/tools</docs.tools>
     <neo4j.version>${project.version}</neo4j.version>
-    <doctools.version>15</doctools.version>
+    <doctools.version>16-SNAPSHOT</doctools.version>
     <attach-docs-phase>none</attach-docs-phase>
   </properties>
 
@@ -76,13 +76,31 @@
         <executions>
           <execution>
             <id>generate-webhelp-html</id>
-            <phase>none</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
             <configuration>
               <includes>neo4j-manual-html.xml</includes>
               <admonGraphicsPath>images/icons/admon/</admonGraphicsPath>
+              <generateToc>
+                article toc,title
+                book toc,title
+                chapter toc,title
+                part toc,title
+                preface
+                toc,title
+                qandadiv toc
+                qandaset toc
+                reference toc,title
+                sect1 toc
+                sect2 toc
+                sect3 toc
+                sect4 toc
+                sect5 toc
+                section toc
+                set toc,title
+              </generateToc>
             </configuration>
           </execution>
           <execution>
@@ -93,6 +111,10 @@
             </goals>
             <configuration>
               <includes>neo4j-manual-shortinfo.xml</includes>
+              <generateToc>
+                book toc
+                part toc
+              </generateToc>
             </configuration>
           </execution>
         </executions>
@@ -115,24 +137,6 @@
           <sectionAutolabel>1</sectionAutolabel>
           <sectionAutolabelMaxDepth>1</sectionAutolabelMaxDepth>
           <appendixAutolabel>true</appendixAutolabel>
-          <generateToc>
-            article toc,title
-            book toc,title
-            chapter toc,title
-            part toc,title
-            preface
-            toc,title
-            qandadiv toc
-            qandaset toc
-            reference toc,title
-            sect1 toc
-            sect2 toc
-            sect3 toc
-            sect4 toc
-            sect5 toc
-            section toc
-            set toc,title
-          </generateToc>
         </configuration>
         <dependencies>
           <dependency>

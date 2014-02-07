@@ -206,6 +206,28 @@ tfoot > tr > th {
   font-weight: normal;
 }
 
+div.admonitionblock table {
+  background: none;
+}
+
+div.admonitionblock tbody, div.admonitionblock td, div.admonitionblock th {
+  border: 0 none;
+}
+
+div.admonitionblock td.icon {
+  vertical-align: middle;
+  text-align: center;
+  width: 4em;
+}
+
+div.admonitionblock td.content {
+  vertical-align: top;
+}
+
+div.admonitionblock td.content b {
+  display: block;
+}
+
 span.contentsTab {
     padding-left: 0;
     background: none;

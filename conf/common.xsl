@@ -9,7 +9,11 @@
 <xsl:param name="html.stylesheet" select="'docbook-xsl.css'"/>
  -->
 
+<xsl:param name="toc.section.depth" select="1"></xsl:param>
+<xsl:param name="toc.max.depth" select="2"></xsl:param>
+<xsl:param name="generate.section.toc.level" select="1"></xsl:param>
 <xsl:param name="section.autolabel">1</xsl:param>
+<xsl:param name="section.autolabel.max.depth">2</xsl:param>
 
 <xsl:template match="table[@role = 'NotInToc']|figure[@role = 'NotInToc']" mode="toc" />
 
@@ -55,9 +59,6 @@
 <xsl:param name="callout.graphics.number.limit" select="'10'"/>
 <xsl:param name="callout.graphics.path" select="'images/icons/callouts/'"/>
 <xsl:param name="callout.list.table" select="'1'"/>
-
-<!-- This does not seem to work. -->
-<xsl:param name="section.autolabel.max.depth" select="2"/>
 
 <xsl:param name="chunk.first.sections" select="1"/>
 <xsl:param name="chunk.section.depth" select="1"/>
