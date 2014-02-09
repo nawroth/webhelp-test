@@ -9,14 +9,10 @@
 <link rel="shortcut icon" href="http://neo4j.org/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="icon" href="http://neo4j.org/favicon.ico" type="image/x-icon" />
 
-<!-- style
-<link href="css/neo.css" rel="stylesheet" type="text/css" />
- -->
-
 <!-- fonts -->
 
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css' />
- 
+
 <!-- Syntax Highlighter -->
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
@@ -38,15 +34,14 @@
   });
 </script>
 
-<!-- Replace SVG for browsers that lack support. -->
-<script type="text/javascript" src="js/svgreplacer.js"></script>
- 
 <!-- Image Scaler -->
 <script type="text/javascript" src="js/imagescaler.js"></script>
- 
-<!-- Table Styler -->
-<script type="text/javascript" src="js/tablestyler.js"></script>
 
+<!-- Cypher Console -->
+
+<script type="text/javascript" src="js/console.js"></script>
+<script type="text/javascript" src="js/cypherconsole.js"></script>
+ 
 <!-- Version
 <script type="text/javascript" src="js/version.js"></script>
  -->

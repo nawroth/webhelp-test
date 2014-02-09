@@ -139,28 +139,16 @@ border: none; background: none; font-weight: none; color: none; }
     font-size: 24px;
 }
 
-#navheader {
-    position: fixed;
-    background: none;
-    left: 2px;
-    top: 72px;
-    text-align: right;
-}
-
 a#showHideButton, a.navLinkPrevious, a.navLinkNext {
 	background: none;
 }
 
-a.navLinkPrevious i {
+#navLinkPrevious i {
   margin-right: 0.5em;
 }
 
-a.navLinkNext i, a.navLinkUp i {
+#navLinkNext i, #navLinkUp i {
   margin-left: 0.5em;
-}
-
-table.navLinks, table.navLinks tr, table.navLinks th, table.navLinks td {
-  border: 0 none;
 }
 
 body, .ui-widget {
@@ -241,6 +229,35 @@ span.contentsTab i, span.searchTab i {
 }
 #showHideButton i {
     margin-right: 0.25em;
+}
+
+p.cypherconsole
+{
+  display: none;
+}
+
+iframe.console,#console {
+  width: 80em;
+  max-width: 95%;
+  height: 23em;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#console {
+  top: 0;
+  left: 0;
+  width: 99.7%;
+  max-width: 99.7%;
+  z-index: 1000;
+}
+
+div.query-wrapper {
+  position: relative;
+}
+
+#console-iframe-button {
+  margin-right: 1em;
 }
 
 /* for IE */

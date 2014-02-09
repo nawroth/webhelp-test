@@ -51,8 +51,7 @@
     bottom: 20px;
     width: auto;
     height: inherit;
-    padding-left: 5px;
-    padding-right: 30px;
+    padding: 0 30px 5px 5px;
     border-left: 1px solid #cccccc;
     overflow :scroll;
     overflow-x:hidden;
@@ -65,26 +64,35 @@
     left: 2px;
     right: 0px;
     top: 72px;
-    text-align: right;
     padding-left: 10px;
 }
 
-div.navfooter { bottom: 2%; }
-div.navfooter > table {
-  background: none;
-} 
+footer p {
+  float: right;
+  margin-top: 1em;
+}
+
+footer img {
+  vertical-align: text-bottom;
+}
+
+#copyright-img {
+  height: 20px;
+}
+#neotech-logo {
+  height: 40px;  
+}
+
 .highlight { background-color: #c5d3c3; }
 .highlightButton{ font-size: 0; }
 
 /*  Show Hide TOC tree */
 .pointLeft {
     padding-right: 15px;
-    display: block;
     cursor: pointer;
 }
 .pointRight {
     padding-right: 15px;
-    display: block;
     cursor: pointer;
 }
 
@@ -146,34 +154,23 @@ div.navfooter > table {
     font-size: 1px; 
 }
 
-table.navLinks {
+#navLinks {
   margin-right: 20px;
   background: none;
 }
 
-table.navLinks td a {
+#navLinks span {
+  padding-right: 16px;
+}
+
+#navLinks a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
 	font-size: 11px;
 }
 
-a.navLinkPrevious {
-	padding-left: 12px;
-	background: url(../images/previous-arrow.png) no-repeat left center;
-}
 
-a.navLinkNext {
-	padding-right: 12px;
-	background: url(../images/next-arrow.png) no-repeat right center;
-}
-
-a#showHideButton {
-	padding-left: 20px;
-	background: url(../images/sidebar.png) no-repeat left center;
-}
-
-	
 .filetree li span a { color: #777; }
 
 #treediv { -webkit-box-shadow: #CCC 0px 1px 2px 0px inset; }
@@ -278,8 +275,9 @@ div.note *, div.caution *, div.important *, div.tip *, div.warning * {
         visibility: visible;
     }
 
-   #sidebar, .navfooter {
-       display: none;
+   #sidebar-wrapper,  .navfooter {
+       display: none !important;
+       width: 0 !important;
    }
 
    #content {

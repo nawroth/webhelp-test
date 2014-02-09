@@ -23,7 +23,6 @@
 
 jQuery( document ).ready(  function()
 {
-  if ( jQuery.browser.msie ) return;
   createCypherConsoles( jQuery );
 });
 
@@ -35,26 +34,30 @@ function createCypherConsoles( $ )
   
   $('pre.cypher').wrap('<div class="query-outer-wrapper"><div class="query-wrapper" /></div>').each( function()
   {
-    var pre = $(this);
-    pre.parent().data('query', pre.text());
+    var $pre = $(this);
+    $pre.parent().data('query', $pre.text());
   });
 
   $('p.cypherconsole').each( function()
   {
-    var context = $( this );
-    var title = $.trim( context.find( '> b, > strong' ).eq(0).text() ) || 'Live Cypher Console';
-    title = title.replace( /\.$/, '' );
-    var database = context.find( 'span.database' ).eq(0).text();
-    if ( !database ) return;
-    var command = context.find( 'span.command > strong' ).eq(0).text();
-    if ( !command ) return;
-    var button = $( '<button class="cypherconsole" type="button" title="Show a console" id="console-iframe-button"><img src="css/utilities-terminal.svg" /><span> ' + title + '</span></button>' );
-    var url = getUrl( database, command );
-    var link = $( '<button class="cypherconsole" type="button" title="Open the console in a new window." id="console-external-button"><img src="css/external.svg" /><span>&#8201;</span></button>' );
-    link.click( function()
+    var $context = $( this );
+    var title = $.trim( $context.children('span.formalpara-title').eq(0).text());
+    if (!title)
     {
-      window.open( url, '_blank' );
-    });    
+      title = $.trim( $context.find( '> b, > strong' ).eq(0).text() ) || 'Live Cypher Console';
+    }
+    title = title.replace( /\.$/, '' );
+    var database = $context.children( 'span.database' ).eq(0).text();
+    if ( !database ) return;
+    var command = $context.children( 'span.command' ).children('strong').eq(0).text();
+    if ( !command ) return;
+    var button = $( '<a href="javascript:;" class="btn btn-primary" title="Show a console" id="console-iframe-button"><i class="fa fa-play"></i><span> ' + title + '</span></a>' );
+    var url = getUrl( database, command );
+    var link = $( '<a href="' + url + '" class="btn btn-default" target="_blank" title="Open the console in a new window." id="console-external-button"><i class="fa fa-external-link"></i><span>&#8201;</span></a>' );
+//    link.click( function()
+//    {
+//      window.open( url, '_blank' );
+//    });    
     button.click( function()
     {
       handleCypherClick( button, link, url, title );
@@ -108,7 +111,7 @@ function createCypherConsoles( $ )
       return;
     }
     iframe = $( "<iframe/>" ).attr( "id", "console" ).addClass( "console" ).attr( "src", url );
-    link.after( iframe );
+    button.before( iframe );
     currentButton = button;
   } 
 }

@@ -105,7 +105,7 @@
           </execution>
           <execution>
             <id>generate-pdf</id>
-            <phase>prepare-package</phase>
+            <phase>none</phase>
             <goals>
               <goal>generate-pdf</goal>
             </goals>
