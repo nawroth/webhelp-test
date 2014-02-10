@@ -270,16 +270,17 @@
       </xsl:call-template>";
     </script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- kasunbg: Order is important between the in-html-file css and the linked css files. Some css 
       declarations in jquery-ui-1.8.2.custom.css are over-ridden. If that's a concern, just remove the additional 
       css contents inside these default jquery css files. I thought of keeping them intact for easier maintenance! -->
-    <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
     <link rel="stylesheet" type="text/css"
       href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
+    <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/style.css" />
     <xsl:comment>
       <xsl:text>[if IE]>

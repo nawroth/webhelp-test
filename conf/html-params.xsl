@@ -33,5 +33,7 @@
 
 <xsl:param name="html.extra.head.links" select="0"></xsl:param>
 
-</xsl:stylesheet>
+<xsl:param name="chunker.output.indent">no</xsl:param>
+<xsl:param name="make.clean.html" select="0"></xsl:param>
 
+</xsl:stylesheet>

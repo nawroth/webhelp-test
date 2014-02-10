@@ -15,9 +15,6 @@
 
 function CypherConsole(config, ready) {
 
-    //    var CONSOLE_URL_BASE = 'http://localhost:8080/';
-    var CONSOLE_URL_BASE = 'http://console.neo4j.org/';
-
     var $IFRAME = $('<iframe/>').attr('id', 'console').addClass('cypherdoc-console');
     var $IFRAME_WRAPPER = $('<div/>').attr('id', 'console-wrapper');
     var RESIZE_OUT_ICON = 'icon-resize-full';
@@ -33,13 +30,17 @@ function CypherConsole(config, ready) {
     var consoleClass = 'consoleClass' in config ? config.consoleClass : 'console';
     var contentId = 'contentId' in config ? config.contentId : 'content';
     var contentMoveSelector = 'contentMoveSelector' in config ? config.contentMoveSelector : 'div.navbar';
+    var consoleUrl = config.url;
 
     createConsole(ready, consoleClass, contentId);
 
     function createConsole(ready, elementClass, contentId) {
         var $element = $('p.' + elementClass).first();
+        //no console defined
         if ($element.length !== 1) {
             $element = $('<p/>').addClass(elementClass);
+            $element.addClass("hidden");
+//            console.log("createConsole", $element);
             $('#' + contentId).append($element);
         }
         $element.each(function () {
@@ -65,7 +66,7 @@ function CypherConsole(config, ready) {
         $context.append($iframeWrapper).append('<span id="console-label" class="label">Console expanded</span>');
         $context.css('background', 'none');
         var latestResizeAmount = 0;
-        var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($iframeWrapper).mousedown(function(event){
+        var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($iframeWrapper).mousedown(function (event) {
             event.preventDefault();
         });
         $iframeWrapper.resizable({'handles': {'s': $verticalResizeButton}, 'alsoResize': $context, 'minHeight': 80, 'start': function () {
@@ -104,6 +105,7 @@ function CypherConsole(config, ready) {
                 $gistForm.css('margin-right', 0);
             }
         });
+
         var $resizeIcon = $('i', $resizeButton);
     }
 
@@ -122,7 +124,7 @@ function CypherConsole(config, ready) {
     }
 
     function getUrl(database, command, message, session) {
-        var url = CONSOLE_URL_BASE;
+        var url = consoleUrl;
 
         if (session !== undefined) {
             url += ';jsessionid=' + session;
@@ -183,6 +185,13 @@ function Consolr(consoleWindow) {
     }
 
     function receiver(event) {
+        var origin = event.origin;
+        if (typeof origin !== 'string') {
+            return;
+        }
+        if (origin.indexOf('neo4j') === -1 && origin.indexOf('localhost') === -1) {
+            return;
+        }
         var result = JSON.parse(event.data);
         if ('call_id' in result) {
             var rr = receivers[result.call_id - 1];

@@ -160,11 +160,15 @@ pre, code {
     font: 14px 'Ubuntu Mono',Menlo,Consolas,Inconsolata,monospace;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
+/*
 table {
   border-collapse: collapse;
   border: 0 none;
-  background: #f7f7f9;
-  border-radius: 4px;
+  background: none;
 }
 
 td {
@@ -185,13 +189,17 @@ td > p {
   margin: 0;
   padding: 0;
 }
-
+*/
 tfoot > tr > th {
   padding: 0 0 0 8px;
   text-align: left;
   border-bottom: 0 none;
   font-size: 12px;
   font-weight: normal;
+}
+
+div.admonitionblock {
+  margin: 1em 0;
 }
 
 div.admonitionblock table {
@@ -210,6 +218,7 @@ div.admonitionblock td.icon {
 
 div.admonitionblock td.content {
   vertical-align: top;
+  padding: 2px 2px 2px 4px;
 }
 
 div.admonitionblock td.content b {
@@ -256,8 +265,8 @@ div.query-wrapper {
   position: relative;
 }
 
-#console-iframe-button {
-  margin-right: 1em;
+#content div.btn-group {
+  margin-top: 0.5em;  
 }
 
 /* for IE */
