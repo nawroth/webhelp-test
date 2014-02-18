@@ -51,9 +51,9 @@ function createCypherConsoles( $ )
     if ( !database ) return;
     var command = $context.children( 'span.command' ).children('strong').eq(0).text();
     if ( !command ) return;
-    var button = $( '<a href="javascript:;" class="btn btn-primary btn-sm" title="Show a console"><i class="fa fa-play"></i><span> ' + title + '</span></a>' );
+    var button = $( '<a href="javascript:;" class="btn btn-primary btn-xs" title="Show a console"><i class="fa fa-play"></i><span> ' + title + '</span></a>' );
     var url = getUrl( database, command );
-    var link = $( '<a href="' + url + '" class="btn btn-default btn-sm" target="_blank" title="Open the console in a new window."><i class="fa fa-external-link"></i><span>&#8201;</span></a>' );
+    var link = $( '<a href="' + url + '" class="btn btn-default btn-xs" target="_blank" title="Open the console in a new window."><i class="fa fa-external-link"></i><span>&#8201;</span></a>' );
     var buttonWrapper = $('<div class="btn-group"/>').insertAfter( this ).append( button, link );
     button.click( function()
     {

@@ -56,9 +56,8 @@
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/cypherconsole.js"></script>
  
-<!-- Version
+<!-- Version -->
 <script type="text/javascript" src="js/version.js"></script>
- -->
 
 ]]>
 </xsl:text>

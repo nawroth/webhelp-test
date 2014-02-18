@@ -51,7 +51,44 @@
   </dependencies>
 
   <build>
+    <resources>
+      <resource>
+        <directory>js</directory>
+        <targetPath>js</targetPath>
+        <filtering>true</filtering>
+        <includes>
+          <include>version.js</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>js</directory>
+        <targetPath>js</targetPath>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>version.js</exclude>
+        </excludes>
+      </resource>
+    </resources>
     <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/resources</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>default-testResources</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
         <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -191,7 +228,7 @@
                   <preservePath>true</preservePath>
                 </resource>
                 <resource>
-                  <directory>${project.basedir}/js</directory>
+                  <directory>${project.build.directory}/resources/js</directory>
                   <targetPath>${project.build.directory}/docbkx/webhelp/js</targetPath>
                   <preservePath>true</preservePath>
                 </resource>
