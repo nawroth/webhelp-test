@@ -22,6 +22,8 @@ CodeMirror.colorize = (function() {
         theme = " cm-s-neo";
       } else if (mode === "java") {
         mode = "text/x-java";
+      } else if (mode === "sql") {
+        mode = "text/x-sql";
       }
 
       var text = [];

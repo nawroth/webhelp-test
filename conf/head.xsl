@@ -15,14 +15,14 @@
 
 <!-- Syntax Highlighter -->
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/addon/runmode/runmode.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/javascript/javascript.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/shell/shell.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/sql/sql.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/clike/clike.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/addon/runmode/runmode.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/javascript/javascript.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/shell/shell.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/sql/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/xml/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/clike/clike.min.js"></script>
 
 <link rel="stylesheet" href="css/codemirror-neo.css" />
 <script src="js/codemirror-cypher.js"></script>
@@ -42,11 +42,11 @@
     $('dl', $content).addClass('dl-horizontal');
     $('div.table table,div.informaltable table', $content).addClass('table table-condensed table-hover');
     var $admonblocks = $('div.admonitionblock');
-    $admonblocks.filter('.Note').find('td.content').addClass('bg-info');
-    $admonblocks.filter('.Tip').find('td.content').addClass('bg-info');
-    $admonblocks.filter('.Important').find('td.content').addClass('bg-warning');
-    $admonblocks.filter('.Caution').find('td.content').addClass('bg-warning');
-    $admonblocks.filter('.Warning').find('td.content').addClass('bg-danger');
+    $admonblocks.filter('.Note').find('td.content').addClass('alert alert-info');
+    $admonblocks.filter('.Tip').find('td.content').addClass('alert alert-info');
+    $admonblocks.filter('.Important').find('td.content').addClass('alert alert-warning');
+    $admonblocks.filter('.Caution').find('td.content').addClass('alert alert-warning');
+    $admonblocks.filter('.Warning').find('td.content').addClass('alert alert-danger');
   });
 </script>
 

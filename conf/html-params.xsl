@@ -36,4 +36,6 @@
 <xsl:param name="chunker.output.indent">no</xsl:param>
 <xsl:param name="make.clean.html" select="0"></xsl:param>
 
+<xsl:param name="ulink.target">_blank</xsl:param>
+
 </xsl:stylesheet>
