@@ -153,7 +153,7 @@ span.searchTab {
 .ui-layout-pane { /* all 'panes' */
   background: #FFF;
   border: none; /*1px solid #BBB;*/
-  padding: 05x;
+  /*padding: 05x;*/
   overflow: auto;
 }
 
@@ -212,6 +212,7 @@ pre,code {
 
 pre {
   white-space: pre-wrap;
+  background: #f9f9f9;
 }
 
 .table tfoot>tr>th,.table-condensed tfoot>tr>th {
@@ -225,6 +226,10 @@ pre {
 td>p {
   margin: 0;
   padding: 0;
+}
+
+div.queryresult thead>tr>th {
+  font-size: 13px;
 }
 
 div.queryresult code {
@@ -308,8 +313,31 @@ div.query-wrapper {
   position: relative;
 }
 
-#content div.btn-group {
-  margin-top: 0.5em;
+div.query-outer-wrapper {
+  position: relative;
+  min-height: 50px;
+}
+
+#content div.query-outer-wrapper div.btn-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a.ulink:after {
+  display: inline-block;
+  font-family: FontAwesome;
+  content: "\00a0\f08e";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a.ulink[href$=".svg"]:after,a.ulink[href$=".jpg"]:after,a.ulink[href$=".png"]:after {
+  content: "" !important;
 }
 
 /* for IE */

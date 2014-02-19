@@ -24,8 +24,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/xml/xml.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/clike/clike.min.js"></script>
 
-<link rel="stylesheet" href="css/codemirror-neo.css" />
-<script src="js/codemirror-cypher.js"></script>
+<link rel="stylesheet" href="http://gist.neo4j.org/css/codemirror-neo.css" />
+<script src="http://gist.neo4j.org/js/codemirror-cypher.js"></script>
 <script src="js/colorize.js"></script>
  
 <script type="text/javascript">

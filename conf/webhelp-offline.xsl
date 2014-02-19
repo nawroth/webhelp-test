@@ -271,13 +271,13 @@
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- kasunbg: Order is important between the in-html-file css and the linked css files. Some css 
       declarations in jquery-ui-1.8.2.custom.css are over-ridden. If that's a concern, just remove the additional 
       css contents inside these default jquery css files. I thought of keeping them intact for easier maintenance! -->
     <link rel="stylesheet" type="text/css"
-      href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css" />
+      href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/redmond/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}jquery/treeview/jquery.treeview.css" />
 
     <link rel="stylesheet" type="text/css" href="{$webhelp.common.dir}css/positioning.css" />
@@ -294,9 +294,9 @@
       This breaks the Oxygen search highlighting. -->
     <script type="text/javascript" src="{$webhelp.common.dir}browserDetect.js">
     </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js">
     </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js">
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/jquery.highlight.js">
     </script>
@@ -307,7 +307,7 @@
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.min.js">
     </script>
 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="{$webhelp.common.dir}main.js">
     </script>

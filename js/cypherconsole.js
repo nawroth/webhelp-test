@@ -32,7 +32,7 @@ function createCypherConsoles( $ )
   var URL_BASE = "http://console.neo4j.org/";
   var REQUEST_BASE = URL_BASE + "?";
   
-  $('pre.cypher').wrap('<div class="query-outer-wrapper"><div class="query-wrapper" /></div>').each( function()
+  $('pre[data-lang="cypher"]').wrap('<div class="query-outer-wrapper"><div class="query-wrapper" /></div>').each( function()
   {
     var $pre = $(this);
     $pre.parent().data('query', $pre.text());
@@ -51,10 +51,12 @@ function createCypherConsoles( $ )
     if ( !database ) return;
     var command = $context.children( 'span.command' ).children('strong').eq(0).text();
     if ( !command ) return;
-    var button = $( '<a href="javascript:;" class="btn btn-primary btn-xs" title="Show a console"><i class="fa fa-play"></i><span> ' + title + '</span></a>' );
+    var button = $( '<a href="javascript:;" class="btn btn-primary" title="' + title + '"><i class="fa fa-play"></i></a>' );
     var url = getUrl( database, command );
-    var link = $( '<a href="' + url + '" class="btn btn-default btn-xs" target="_blank" title="Open the console in a new window."><i class="fa fa-external-link"></i><span>&#8201;</span></a>' );
-    var buttonWrapper = $('<div class="btn-group"/>').insertAfter( this ).append( button, link );
+    var link = $( '<a href="' + url + '" class="btn btn-default" target="_blank" title="Open the console in a new window."><i class="fa fa-external-link"></i><span>&#8201;</span></a>' );
+    var $queryOuterWrapper = $context.prevAll('div.query-outer-wrapper').first();   
+    $queryOuterWrapper.children('div.query-wrapper').css("margin-left", "32px");
+    var buttonWrapper = $('<div class="btn-group btn-group-xs btn-group-vertical"/>').appendTo( $queryOuterWrapper ).append( button, link );
     button.click( function()
     {
       handleCypherClick( buttonWrapper, link, url, title );
