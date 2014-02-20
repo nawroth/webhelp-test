@@ -47,9 +47,9 @@ function createCypherConsoles( $ )
       title = $.trim( $context.find( '> b, > strong' ).eq(0).text() ) || 'Live Cypher Console';
     }
     title = title.replace( /\.$/, '' );
-    var database = $context.children( 'span.database' ).eq(0).text();
+    var database = $.trim( $context.children( 'span.database' ).eq(0).text() );
     if ( !database ) return;
-    var command = $context.children( 'span.command' ).children('strong').eq(0).text();
+    var command = $.trim( $context.children( 'span.command' ).children('strong').eq(0).text() );
     if ( !command ) return;
     var button = $( '<a href="javascript:;" class="btn btn-primary" title="' + title + '"><i class="fa fa-play"></i></a>' );
     var url = getUrl( database, command );
@@ -67,7 +67,7 @@ function createCypherConsoles( $ )
   {
     $(this).css('display', 'block');
     CypherConsole( {
-      'url' : 'http://console.neo4j.org/',
+      'url' : URL_BASE,
       'consoleClass' : 'cypherdoc-console',
       'contentMoveSelector' : 'html'
     });

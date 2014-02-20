@@ -330,6 +330,7 @@ a.ulink:after {
   content: "\00a0\f08e";
   font-style: normal;
   font-weight: normal;
+  font-size: 13px;
   text-decoration: inherit;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
