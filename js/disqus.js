@@ -75,7 +75,7 @@ else
 var disqus_url = window.location;
 var disqus_shortname = "neo4j";
 var disqus_developer = 0;
-if ( disqus_url.protocol === "http:" || disqus_url.protocol === "https:" )
+if ( disqus_url.host.indexOf( 'neo4j.' ) !== -1 && disqus_url.pathname.indexOf( '/lab/' ) === -1 )
 {
   var docsLocation = "http://docs.neo4j.org/chunked/snapshot/";
   var path = disqus_url.pathname;
