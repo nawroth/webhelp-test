@@ -55,10 +55,13 @@
 
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/cypherconsole.js"></script>
- 
+
 <!-- Version -->
 <script type="text/javascript" src="js/version.js"></script>
 
+<!-- Discuss -->
+<script type="text/javascript" src="js/disqus.js"></script>
+ 
 ]]>
 </xsl:text>
 

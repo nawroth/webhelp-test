@@ -349,3 +349,40 @@ a,a img {
 img {
   border: 0;
 }
+
+#discuss {
+  margin: 2em 0 1em 0;
+}
+
+#discuss-header {
+  position: relative;
+  background: #30333a;
+  color: #ffffff;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#discuss-icon {
+  font-size: 28px;
+  padding: 2px 4px;
+}
+
+#discuss-toggle {
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 18px;
+}
+
+#discuss-intro {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  padding: 6px 4px 0 0;
+  margin-bottom: 1em;
+}
+
+#disqus-body {
+  display: none;
+}
