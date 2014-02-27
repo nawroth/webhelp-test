@@ -69,9 +69,21 @@ function createCypherConsoles( $ )
     CypherConsole( {
       'url' : URL_BASE,
       'consoleClass' : 'cypherdoc-console',
-      'contentMoveSelector' : 'html'
+      'contentMoveSelector' : '#content',
+      'onExpand' : onExpand,
+      'onUnexpand' : onUnexpand
     });
   });
+  
+  function onExpand()
+  {
+    console.log('expanding');
+  }
+  
+  function onUnexpand()
+  {
+    console.log('unexpanding');
+  }
   
   function getUrl( database, command, message )
   {

@@ -309,6 +309,85 @@ iframe.console,#console {
   z-index: 1000;
 }
 
+#console {
+  height: 100%;
+  width: 100%;
+}
+
+#console-wrapper {
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#console-wrapper {
+  position: relative;
+}
+
+#console-wrapper,p.console,iframe.console {
+  height: 23em;
+}
+
+p.console.fixed-console {
+  height: 36px;
+  margin-bottom: 36px;
+  width: 100%;
+}
+
+#console-wrapper.fixed-console {
+  position: fixed;
+}
+
+#console-label {
+  display: none;
+}
+
+p.cypherdoc-console {
+  margin-bottom: 2.5em;
+}
+
+p.cypherdoc-console.fixed-console>#console-label {
+  display: inline;
+}
+
+#content.internet-explorer #console-wrapper.fixed-console {
+  width: 98%;
+}
+
+span.resize-vertical-handle {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  bottom: -8px;
+  cursor: s-resize;
+  display: block;
+  height: 9px;
+  position: absolute;
+  width: 100%;
+}
+
+span.resize-vertical-handle span {
+  background: none repeat scroll 0 0 #888888;
+  display: block;
+  height: 1px;
+  margin: 3px auto;
+  width: 30px;
+}
+
+#resize-overlay {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+a.resize-toggle {
+  bottom: -35px;
+  position: absolute;
+  left: 0;
+}
+
 div.query-wrapper {
   position: relative;
 }

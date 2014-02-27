@@ -60,7 +60,15 @@
 <script type="text/javascript" src="js/version.js"></script>
 
 <!-- Discuss -->
+<script type="text/javascript" src="js/mutate.min.js"></script>
 <script type="text/javascript" src="js/disqus.js"></script>
+
+<script type="text/javascript">
+    /*@cc_on @*/
+    /*@
+     $( '#content' ).addClass( 'internet-explorer' );
+     @*/
+</script>
  
 ]]>
 </xsl:text>

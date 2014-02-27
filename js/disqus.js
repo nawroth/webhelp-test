@@ -13,28 +13,42 @@ function initDisqus()
   $body.append( $thread );
   $wrapper.append( $body );
 
+  function scrollToComments()
+  {
+    var scroll = $pageContent.scrollTop() + $wrapper.offset().top - $pageContent.offset().top;
+    $pageContent.animate( {
+      scrollTop : ( scroll )
+    }, 500 );
+  }
+
   var initialized = false;
+  var heightUpdated = false;
   var isOpen = false;
 
   $header.click( function()
   {
-    if ( isOpen )
+    if ( $toggle.hasClass( OPEN_ICON ) )
     {
       $body.css( 'display', 'none' );
       $toggle.removeClass( OPEN_ICON ).addClass( CLOSED_ICON );
     }
     else
     {
+      $body.css( 'display', 'block' );
       if ( !initialized )
       {
         initialized = true;
+        $thread.mutate( 'height', function()
+        {
+          if ( !heightUpdated )
+          {
+            heightUpdated = true;
+            scrollToComments();
+          }
+        } );
         runDisqus( $thread );
       }
-      $body.css( 'display', 'block' );
       $toggle.removeClass( CLOSED_ICON ).addClass( OPEN_ICON );
-      $pageContent.animate( {
-        scrollTop : ( $pageContent.scrollTop() + $wrapper.offset().top )
-      }, 500 );
     }
     isOpen = !isOpen;
   } );
@@ -49,75 +63,24 @@ function runDisqus( $thread )
   window.disqus_identifier = "manual";
   window.disqus_title = "The Neo4j Manual";
 
-  function getIdFromHeading( headingElement )
+  var pathParts = window.location.pathname.split( '/' );
+  var doc = pathParts[pathParts.length - 1];
+  if ( doc === '' || doc === 'index.html' )
   {
-    var id = window.disqus_identifier;
-    var child = headingElement.firstChild;
-    if ( !child || child.nodeName.toLowerCase() !== "a" )
-    {
-      return null;
-    }
-    var attr = child.getAttribute( "id" );
-    if ( !attr )
-    {
-      return null;
-    }
-    id += "-";
-    id += headingElement.firstChild.getAttribute( "id" );
-    return id;
-  }
-  var headings = document.body.getElementsByTagName( "h1" );
-  if ( headings.length > 0 )
-  {
-    var h1Id = getIdFromHeading( headings[0] );
-    if ( h1Id )
-    {
-      if ( h1Id.length > 2 && h1Id.substr( 0, 9 ) === "manual-id" )
-      {
-        window.disqus_identifier += "-toc";
-      }
-      else
-      {
-        window.disqus_identifier = h1Id;
-      }
-    }
+    window.disqus_identifier += '-toc';
   }
   else
   {
-    headings = document.body.getElementsByTagName( "h2" );
-    if ( headings.length > 0 )
+    window.disqus_identifier += '-' + doc.substr( 0, doc.length - 5 );
+  }
+
+  if ( document.title )
+  {
+    window.disqus_title = document.title;
+    var match = window.disqus_title.match( /^(Chapter|)[0-9\.\s]*(.*)$/ );
+    if ( match && match[2] )
     {
-      var id = getIdFromHeading( headings[0] );
-      if ( id )
-      {
-        window.disqus_identifier = id;
-      }
-      else
-      {
-        var divs = document.body.getElementsByTagName( "div" );
-        for ( var i = 0, l = divs.length; i < l; i += 1 )
-        {
-          var div = divs[i];
-          if ( div.className === "refsynopsisdiv" )
-          {
-            var divId = getIdFromHeading( div );
-            if ( divId )
-            {
-              window.disqus_identifier = divId;
-            }
-            break;
-          }
-        }
-      }
-    }
-    if ( document.title )
-    {
-      window.disqus_title = document.title;
-      var match = window.disqus_title.match( /^(Chapter|)[0-9\.\s]*(.*)$/ );
-      if ( match && match[2] )
-      {
-        window.disqus_title = match[2];
-      }
+      window.disqus_title = match[2];
     }
   }
 
@@ -166,8 +129,7 @@ function runDisqus( $thread )
       list,
       "Have a data modeling question or want to participate in discussions around Neo4j and graphs?",
       "The <a href='https://groups.google.com/forum/?fromgroups#!forum/neo4j'>Neo4j Google Group</a> is a great place for this." );
-  appendListItem( list, "Is 140 characters enough?",
-      "Go <a href='https://twitter.com/search?q=neo4j'>#neo4j</a>." );
+  appendListItem( list, "Is 140 characters enough?", "Go <a href='https://twitter.com/search?q=neo4j'>#neo4j</a>." );
   appendListItem( list, "Have a question on the content of this page or missing something here?",
       "Use the discussion thread below. "
           + "Please post any comments or suggestions regarding the documentation right here!" );

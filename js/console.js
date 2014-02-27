@@ -20,7 +20,7 @@ function CypherConsole(config, ready) {
     var RESIZE_OUT_ICON = 'fa-expand';
     var RESIZE_IN_ICON = 'fa-compress';
     var $RESIZE_BUTTON = $('<a class="btn btn-xs btn-default resize-toggle"><i class="fa ' + RESIZE_OUT_ICON + '"></i></a>');
-    var $RESIZE_VERTICAL_BUTTON = $('<span class="resize-vertical-handle ui-resizable-handle ui-resizable-s"><span/></span>');
+    var $RESIZE_VERTICAL_BUTTON = $('<span class="resize-vertical-handle ui-resizable-handle ui-resizable-s"><span></span></span>');
     var $PLAY_BUTTON = $('<a class="run-query btn btn-success" data-toggle="tooltip" title="Execute in the console." href="#"><i class="fa fa-play"></i></a>');
     var $EDIT_BUTTON = $('<a class="edit-query btn btn-default" data-toggle="tooltip" title="Copy to the console." href="#"><i class="fa fa-clipboard"></i></a>');
     var $BUTTON_GROUP = $('<div class="btn-group btn-group-xs btn-group-vertical"/>');
@@ -32,6 +32,9 @@ function CypherConsole(config, ready) {
     var contentId = 'contentId' in config ? config.contentId : 'content';
     var contentMoveSelector = 'contentMoveSelector' in config ? config.contentMoveSelector : 'div.navbar';
     var consoleUrl = config.url;
+    var expandHeightCorrection = 'expandHeightCorrection' in config ? config.expandHeightCorrection : 0;
+    var onExpand = 'onExpand' in config ? config.onExpand : function(){};
+    var onExpand = 'onUnexpand' in config ? config.onUnexpand : function(){};
 
     createConsole(ready, consoleClass, contentId);
 
@@ -64,7 +67,7 @@ function CypherConsole(config, ready) {
         var $iframeWrapper = $IFRAME_WRAPPER.clone();
         $iframeWrapper.append($iframe);
         var $contentMoveSelector = $(contentMoveSelector).first();
-        $context.append($iframeWrapper).append('<span id="console-label" class="label">Console expanded</span>');
+        $context.append($iframeWrapper).append('<span id="console-label" class="label label-default">Console expanded</span>');
         $context.css('background', 'none');
         var latestResizeAmount = 0;
         var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($iframeWrapper).mousedown(function (event) {
@@ -81,20 +84,22 @@ function CypherConsole(config, ready) {
                 }
             }}
         );
-        var $gistForm = $('#gist-form');
+        //var $gistForm = $('#gist-form');
         var contextHeight = 0;
         var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {
             if ($resizeIcon.hasClass(RESIZE_OUT_ICON)) {
+                onExpand();
                 contextHeight = $context.height();
-                $context.height(36);
+                //$context.height(36);
                 $resizeIcon.removeClass(RESIZE_OUT_ICON).addClass(RESIZE_IN_ICON);
                 $iframeWrapper.addClass('fixed-console');
                 $context.addClass('fixed-console');
-                $contentMoveSelector.css('margin-top', $iframeWrapper.height());
+                $contentMoveSelector.css('margin-top', $iframeWrapper.height() - expandHeightCorrection);
                 $iframeWrapper.resizable('option', 'alsoResize', null);
-                $gistForm.css('margin-right', 56);
+                //$gistForm.css('margin-right', 56);
                 latestResizeAmount = 0;
             } else {
+                onUnexpand();
                 if (latestResizeAmount) {
                     $context.height(contextHeight + latestResizeAmount);
                 }
@@ -103,7 +108,7 @@ function CypherConsole(config, ready) {
                 $context.removeClass('fixed-console');
                 $contentMoveSelector.css('margin-top', 0);
                 $iframeWrapper.resizable('option', 'alsoResize', $context);
-                $gistForm.css('margin-right', 0);
+                //$gistForm.css('margin-right', 0);
             }
         });
 
