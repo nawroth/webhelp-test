@@ -18,8 +18,16 @@ $( document ).ready( function()
     $( '#showHideButton' ).click( function( event )
     {
       event.preventDefault();
-      layout( 'west' );
+      if ( !layout.state.west.isHidden )
+      {
+        layout.toggle( 'west' );
+      }
     } );
+    if ( layout.state.west.isHidden )
+    {
+      layout.show( 'west', false );
+    }
+    window.webhelpLayout = layout;
   }
 } );
 
@@ -53,7 +61,7 @@ function prepareLayout()
     // automatic cookie load & save enabled by default
     stateManagement__enabled : true,
     stateManagement__cookie__name : "sidebar_state"
-  } ).toggle;
+  } );
 }
 
 function initialize()

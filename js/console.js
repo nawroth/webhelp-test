@@ -19,7 +19,7 @@ function CypherConsole(config, ready) {
     var $IFRAME_WRAPPER = $('<div/>').attr('id', 'console-wrapper');
     var RESIZE_OUT_ICON = 'fa-expand';
     var RESIZE_IN_ICON = 'fa-compress';
-    var $RESIZE_BUTTON = $('<a class="btn btn-xs btn-default resize-toggle"><i class="fa ' + RESIZE_OUT_ICON + '"></i></a>');
+    var $RESIZE_BUTTON = $('<a class="btn btn-xs btn-primary resize-toggle"><i class="fa ' + RESIZE_OUT_ICON + '"></i></a>');
     var $RESIZE_VERTICAL_BUTTON = $('<span class="resize-vertical-handle ui-resizable-handle ui-resizable-s"><span></span></span>');
     var $PLAY_BUTTON = $('<a class="run-query btn btn-success" data-toggle="tooltip" title="Execute in the console." href="#"><i class="fa fa-play"></i></a>');
     var $EDIT_BUTTON = $('<a class="edit-query btn btn-default" data-toggle="tooltip" title="Copy to the console." href="#"><i class="fa fa-clipboard"></i></a>');
@@ -34,7 +34,7 @@ function CypherConsole(config, ready) {
     var consoleUrl = config.url;
     var expandHeightCorrection = 'expandHeightCorrection' in config ? config.expandHeightCorrection : 0;
     var onExpand = 'onExpand' in config ? config.onExpand : function(){};
-    var onExpand = 'onUnexpand' in config ? config.onUnexpand : function(){};
+    var onUnexpand = 'onUnexpand' in config ? config.onUnexpand : function(){};
 
     createConsole(ready, consoleClass, contentId);
 
@@ -80,7 +80,7 @@ function CypherConsole(config, ready) {
                 latestResizeAmount = ui.size.height - ui.originalSize.height;
             }, 'resize': function (event, ui) {
                 if (!$resizeIcon.hasClass(RESIZE_OUT_ICON)) {
-                    $contentMoveSelector.css('margin-top', ui.size.height);
+                    $contentMoveSelector.css('margin-top', ui.size.height - expandHeightCorrection);
                 }
             }}
         );
