@@ -385,7 +385,11 @@ span.resize-vertical-handle span {
 a.resize-toggle {
   bottom: -32px;
   position: absolute;
-  left: 0;
+  right: 4px;
+}
+
+#console-wrapper.fixed-console a.resize-toggle {
+  right: 18px;
 }
 
 div.query-wrapper {
