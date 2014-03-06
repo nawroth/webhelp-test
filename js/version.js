@@ -5,7 +5,7 @@ window.neo4jVersion="${project.version}";
   var doc = pathParts[pathParts.length - 1];
   if ( doc === '' || doc === 'index.html' )
   {
-    window.neo4jPageId = 'manual';
+    window.neo4jPageId = 'index';
   }
   else
   {

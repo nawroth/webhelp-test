@@ -81,9 +81,21 @@ function createCypherConsoles( $ )
       'url' : URL_BASE,
       'consoleClass' : 'cypherdoc-console',
       'contentMoveSelector' : '#content',
-      'expandHeightCorrection' : 0,
+      'expandHeightCorrection' : 5,
       'onExpand' : onExpand,
       'onUnexpand' : onUnexpand
+    } );
+    window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
+    {
+      $( 'body' ).css( 'overflow-y', 'auto' );
+      $( '#content' ).css( 'position', 'fixed' ).css( 'height', 'inherit' );
+      $cypherdocConsole.css( 'display', 'inline' );
+    } );
+    window.layoutEventReactor.add( 'north', 'open', function( element, state, options, layoutName )
+    {
+      $( 'body' ).css( 'overflow-y', 'hidden' );
+      $( '#content' ).css( 'position', 'absolute' );
+      $cypherdocConsole.css( 'display', 'block' ).css( 'height', 'inherit' );
     } );
   } );
 
@@ -92,14 +104,12 @@ function createCypherConsoles( $ )
     tocWasOpen = !window.webhelpLayout.state.west.isClosed;
     window.webhelpLayout.hide( 'west' );
     window.webhelpLayout.hide( 'north' );
-    $cypherdocConsole.css( 'display', 'inline' );
   }
 
   function onUnexpand()
   {
     window.webhelpLayout.show( 'north' );
     window.webhelpLayout.show( 'west', tocWasOpen );
-    $cypherdocConsole.css( 'display', 'block' );
   }
 
   function getUrl( database, command, message )

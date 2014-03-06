@@ -15,6 +15,7 @@ $( document ).ready( function()
   if ( $content.length > 0 )
   {
     var layout = prepareLayout();
+    layout.show( 'north' );
     $( '#showHideButton' ).click( function( event )
     {
       event.preventDefault();
@@ -60,8 +61,44 @@ function prepareLayout()
     west__fxName_close : "none",
     // automatic cookie load & save enabled by default
     stateManagement__enabled : true,
-    stateManagement__cookie__name : "sidebar_state"
+    stateManagement__cookie__name : "sidebar_state",
+
+    onclose_end : window.layoutEventReactor.trigger( 'close' ),
+    onopen_end : window.layoutEventReactor.trigger( 'open' ),
+    onhide_end : window.layoutEventReactor.trigger( 'hide' ),
+    onshow_end : window.layoutEventReactor.trigger( 'show' ),
+    onresize_end : window.layoutEventReactor.trigger( 'resize' )
   } );
+}
+
+window.layoutEventReactor = new EventReactor();
+
+function EventReactor()
+{
+  var map = {};
+  this.add = function( name, type, handler )
+  {
+    var key = name + '=' + type;
+    if (!(key in map))
+    {
+      map[key] = [];
+    }
+    var list = map[key];
+    list.push( handler );
+  }
+  this.trigger = function( type )
+  {
+    return function( name, element, state, options, layoutName )
+    {
+      var key = name + '=' + type;
+      if (!(key in map)) return;
+      var list = map[key];
+      for ( var i = 0; i < list.length; i++ )
+      {
+        list[i]( element, state, options, layoutName );
+      }
+    }
+  }
 }
 
 function initialize()

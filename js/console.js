@@ -73,7 +73,7 @@ function CypherConsole(config, ready) {
         var $iframeWrapper = $IFRAME_WRAPPER.clone();
         $iframeWrapper.append($iframe);
         var $contentMoveSelector = $(contentMoveSelector).first();
-        $context.append($iframeWrapper).append('<span id="console-label" class="label label-default">Console expanded</span>');
+        $context.append($iframeWrapper);
         $context.css('background', 'none');
         var latestResizeAmount = 0;
         var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($iframeWrapper).mousedown(function (event) {
@@ -86,7 +86,7 @@ function CypherConsole(config, ready) {
                 latestResizeAmount = ui.size.height - ui.originalSize.height;
             }, 'resize': function (event, ui) {
                 if (!$resizeIcon.hasClass(RESIZE_OUT_ICON)) {
-                    $contentMoveSelector.css('margin-top', ui.size.height - expandHeightCorrection);
+                    $contentMoveSelector.css('top', ui.size.height + expandHeightCorrection);
                 }
             }}
         );
@@ -95,24 +95,22 @@ function CypherConsole(config, ready) {
         var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {
             if ($resizeIcon.hasClass(RESIZE_OUT_ICON)) {
                 onExpand();
-                contextHeight = $context.height();
-                //$context.height(36);
                 $resizeIcon.removeClass(RESIZE_OUT_ICON).addClass(RESIZE_IN_ICON);
                 $iframeWrapper.addClass('fixed-console');
                 $context.addClass('fixed-console');
-                $contentMoveSelector.css('margin-top', $iframeWrapper.height() - expandHeightCorrection);
+                $contentMoveSelector.css('top', $iframeWrapper.height() + expandHeightCorrection);
                 $iframeWrapper.resizable('option', 'alsoResize', null);
                 //$gistForm.css('margin-right', 56);
                 latestResizeAmount = 0;
             } else {
                 onUnexpand();
                 if (latestResizeAmount) {
-                    $context.height(contextHeight + latestResizeAmount);
+                    $context.height(latestResizeAmount);
                 }
                 $resizeIcon.removeClass(RESIZE_IN_ICON).addClass(RESIZE_OUT_ICON);
                 $iframeWrapper.removeClass('fixed-console');
                 $context.removeClass('fixed-console');
-                $contentMoveSelector.css('margin-top', 0);
+                $contentMoveSelector.css('top', 0);
                 $iframeWrapper.resizable('option', 'alsoResize', $context);
                 //$gistForm.css('margin-right', 0);
             }

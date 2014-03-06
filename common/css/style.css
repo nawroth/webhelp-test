@@ -339,16 +339,8 @@ p.console.fixed-console {
   position: fixed;
 }
 
-#console-label {
-  display: none;
-}
-
 p.cypherdoc-console {
   margin-bottom: 2.5em;
-}
-
-p.cypherdoc-console.fixed-console>#console-label {
-  display: inline;
 }
 
 #content.internet-explorer #console-wrapper.fixed-console {
@@ -363,7 +355,7 @@ span.resize-vertical-handle {
   display: block;
   height: 9px;
   position: absolute;
-  width: 100%;
+  width: 99.7%;
 }
 
 span.resize-vertical-handle span {
@@ -431,6 +423,48 @@ a,a img {
 
 img {
   border: 0;
+}
+
+#versions {
+  color: #ffffff;
+  position: fixed;
+  right: 20px;
+  top: 75px;
+  font-size: 14px;
+}
+
+#versions a,#versions a:hover {
+  padding: 0 4px;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+#versions a[href]:link,#versions a[href]:visited,#versions a[href]:hover,#versions a[href]:focus,#versions a[href]:active
+  {
+  color: #ffffff;
+}
+
+#versions a[href]:hover,#versions a[href]:focus,#versions a[href]:active {
+  text-decoration: underline;
+}
+
+#versions>ul.list-inline {
+  margin: 0;
+}
+
+#versions>ul.list-inline>li {
+  padding: 0 2px;
+}
+
+#additional-versions {
+  position: fixed;
+  right: 4px;
+  top: 75px;
+  font-size: 14px;
+}
+
+#additional-versions a.dropdown-toggle {
+  color: #ffffff;
 }
 
 #discuss {

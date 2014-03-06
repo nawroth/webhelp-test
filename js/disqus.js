@@ -82,7 +82,7 @@ function runDisqus( $thread )
   window.disqus_identifier = "manual";
   window.disqus_title = "The Neo4j Manual";
 
-  if ( window.neo4jPageId === 'manual' )
+  if ( window.neo4jPageId === 'index' )
   {
     window.disqus_identifier += '-toc';
   }
