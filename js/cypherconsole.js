@@ -87,14 +87,10 @@ function createCypherConsoles( $ )
     } );
     window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
     {
-      $( 'body' ).css( 'overflow-y', 'auto' );
-      $( '#content' ).css( 'position', 'fixed' ).css( 'height', 'inherit' );
       $cypherdocConsole.css( 'display', 'inline' );
     } );
     window.layoutEventReactor.add( 'north', 'open', function( element, state, options, layoutName )
     {
-      $( 'body' ).css( 'overflow-y', 'hidden' );
-      $( '#content' ).css( 'position', 'absolute' );
       $cypherdocConsole.css( 'display', 'block' ).css( 'height', 'inherit' );
     } );
   } );

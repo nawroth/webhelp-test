@@ -8,6 +8,8 @@
   left: 0;
   border-bottom: 1px solid #bbbbbb;
   z-index: 2000;
+  overflow: visible;
+  overflow-x: visible;
 }
 
 #header h1 {

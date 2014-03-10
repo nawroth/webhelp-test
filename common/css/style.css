@@ -314,6 +314,10 @@ iframe.console,#console {
   width: 100%;
 }
 
+div.query-outer-wrapper #console {
+  height: 23em;
+}
+
 #console-wrapper {
   left: 0;
   top: 0;
@@ -465,6 +469,7 @@ img {
 
 #additional-versions a.dropdown-toggle {
   color: #ffffff;
+  cursor: pointer;
 }
 
 #discuss {

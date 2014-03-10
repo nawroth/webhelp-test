@@ -29,6 +29,7 @@ $( document ).ready( function()
       layout.show( 'west', false );
     }
     window.webhelpLayout = layout;
+    prepareLayoutEventHandlers();
   }
 } );
 
@@ -69,6 +70,22 @@ function prepareLayout()
     onshow_end : window.layoutEventReactor.trigger( 'show' ),
     onresize_end : window.layoutEventReactor.trigger( 'resize' )
   } );
+}
+
+function prepareLayoutEventHandlers()
+{
+    $( '#header' ).css( 'z-index', 2000 );
+    window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
+    {
+      $( 'body' ).css( 'overflow-y', 'auto' );
+      $( '#content' ).css( 'position', 'fixed' ).css( 'height', 'inherit' );
+    } );
+    window.layoutEventReactor.add( 'north', 'open', function( element, state, options, layoutName )
+    {
+      $( 'body' ).css( 'overflow-y', 'hidden' );
+      $( '#content' ).css( 'position', 'absolute' );
+      $( '#header' ).css( 'z-index', 2000 );
+    } );
 }
 
 window.layoutEventReactor = new EventReactor();

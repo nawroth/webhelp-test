@@ -33,7 +33,6 @@ function versionSwitcher( $ )
   var currentPage = window.neo4jPageId + '.html';
 
   loadVersions();
-  $( '#header' ).css( 'z-index', 2000 );
 
   /**
   * Load an array of version into a div element and check if the current page actually exists in these versions.
