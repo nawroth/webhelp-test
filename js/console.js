@@ -61,7 +61,7 @@ function CypherConsole(config, ready) {
     }
 
     function addConsole($context, ready) {
-        var url = getUrl('none', 'none', '\n\nUse the play/edit buttons to run the queries!');
+        var url = getUrl('none', 'none', '\n\nUse the play/copy buttons to run the queries!');
         var $iframe = $IFRAME.clone().attr('src', url);
         $iframe.load(function () {
             consolr = new Consolr($iframe[0].contentWindow);
@@ -90,6 +90,7 @@ function CypherConsole(config, ready) {
                 }
             }}
         );
+
         //var $gistForm = $('#gist-form');
         var contextHeight = 0;
         var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {

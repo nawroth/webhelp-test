@@ -85,6 +85,8 @@ function createCypherConsoles( $ )
       'onExpand' : onExpand,
       'onUnexpand' : onUnexpand
     } );
+    var $consoleWrapper = $( '#console-wrapper' );
+    var $content = $( '#content' );
     window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
     {
       $cypherdocConsole.css( 'display', 'inline' );
@@ -92,6 +94,13 @@ function createCypherConsoles( $ )
     window.layoutEventReactor.add( 'north', 'open', function( element, state, options, layoutName )
     {
       $cypherdocConsole.css( 'display', 'block' ).css( 'height', 'inherit' );
+    } );
+    window.layoutEventReactor.add( 'center', 'resize', function( element, state, options, layoutName )
+    {
+      if ( $cypherdocConsole.hasClass( 'fixed-console' ) )
+      {
+        $content.css( 'top', $consoleWrapper.height() + 5 ).css( 'height', 'inherit' );
+      }
     } );
   } );
 
