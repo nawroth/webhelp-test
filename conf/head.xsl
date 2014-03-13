@@ -15,14 +15,14 @@
 
 <!-- Syntax Highlighter -->
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/addon/runmode/runmode.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/javascript/javascript.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/shell/shell.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/sql/sql.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/xml/xml.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/clike/clike.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/codemirror.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/codemirror.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/addon/runmode/runmode.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/mode/javascript/javascript.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/mode/shell/shell.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/mode/sql/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/mode/xml/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.22.0/mode/clike/clike.min.js"></script>
 
 <link rel="stylesheet" href="http://gist.neo4j.org/css/codemirror-neo.css" />
 <script src="http://gist.neo4j.org/js/codemirror-cypher.js"></script>
