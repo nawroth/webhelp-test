@@ -253,6 +253,11 @@
       <name>Sonatype Public</name>
       <url>http://repository.sonatype.org/content/groups/public</url>
     </repository>
+    <repository>
+      <id>jboss</id>
+      <name>JBoss</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
   </repositories>
 
 </project>
