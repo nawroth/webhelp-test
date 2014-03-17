@@ -15,7 +15,7 @@ $( document ).ready( function()
   if ( $content.length > 0 )
   {
     var layout = prepareLayout();
-    layout.show( 'north' );
+    layout.show( 'north', true );
     $( '#showHideButton' ).click( function( event )
     {
       event.preventDefault();

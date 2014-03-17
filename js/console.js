@@ -39,8 +39,17 @@ function CypherConsole(config, ready) {
     var contentMoveSelector = 'contentMoveSelector' in config ? config.contentMoveSelector : 'div.navbar';
     var consoleUrl = config.url;
     var expandHeightCorrection = 'expandHeightCorrection' in config ? config.expandHeightCorrection : 0;
-    var onExpand = 'onExpand' in config ? config.onExpand : function(){};
-    var onUnexpand = 'onUnexpand' in config ? config.onUnexpand : function(){};
+    var expandEventHandlers = {
+        'beforeExpand' : getFunctionFromConfig( 'beforeExpand' ),
+        'afterExpand' : getFunctionFromConfig( 'afterExpand' ),
+        'beforeUnexpand' : getFunctionFromConfig( 'beforeUnexpand' ),
+        'afterUnexpand' : getFunctionFromConfig( 'afterUnexpand' )
+    };
+    
+    function getFunctionFromConfig( name )
+    {
+      return name in config ? config[name] : function(){};
+    }
 
     createConsole(ready, consoleClass, contentId);
 
@@ -95,7 +104,7 @@ function CypherConsole(config, ready) {
         var contextHeight = 0;
         var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {
             if ($resizeIcon.hasClass(RESIZE_OUT_ICON)) {
-                onExpand();
+                expandEventHandlers.beforeExpand();
                 $resizeIcon.removeClass(RESIZE_OUT_ICON).addClass(RESIZE_IN_ICON);
                 $iframeWrapper.addClass('fixed-console');
                 $context.addClass('fixed-console');
@@ -103,8 +112,9 @@ function CypherConsole(config, ready) {
                 $iframeWrapper.resizable('option', 'alsoResize', null);
                 //$gistForm.css('margin-right', 56);
                 latestResizeAmount = 0;
+                expandEventHandlers.afterExpand();
             } else {
-                onUnexpand();
+                expandEventHandlers.beforeUnexpand();
                 if (latestResizeAmount) {
                     $context.height(latestResizeAmount);
                 }
@@ -114,6 +124,7 @@ function CypherConsole(config, ready) {
                 $contentMoveSelector.css('top', 0);
                 $iframeWrapper.resizable('option', 'alsoResize', $context);
                 //$gistForm.css('margin-right', 0);
+                expandEventHandlers.afterUnexpand();
             }
         });
 

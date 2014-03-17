@@ -83,8 +83,9 @@ function createCypherConsoles( $ )
       'consoleClass' : 'cypherdoc-console',
       'contentMoveSelector' : '#content',
       'expandHeightCorrection' : 5,
-      'onExpand' : onExpand,
-      'onUnexpand' : onUnexpand
+      'beforeExpand' : beforeExpand,
+      'afterExpand' : afterExpand,
+      'afterUnexpand' : afterUnexpand
     } );
     var $consoleWrapper = $( '#console-wrapper' );
     window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
@@ -104,16 +105,18 @@ function createCypherConsoles( $ )
     } );
   } );
 
-  function onExpand()
+  function beforeExpand()
   {
     tocWasOpen = !window.webhelpLayout.state.west.isClosed;
     window.webhelpLayout.hide( 'west' );
     window.webhelpLayout.hide( 'north' );
-    $cypherdocConsole.css( 'display', 'none' ).height();
-    $cypherdocConsole.css( 'display', 'block' );
   }
 
-  function onUnexpand()
+  function afterExpand()
+  {
+  }
+  
+  function afterUnexpand()
   {
     window.webhelpLayout.show( 'north' );
     window.webhelpLayout.show( 'west', tocWasOpen );
