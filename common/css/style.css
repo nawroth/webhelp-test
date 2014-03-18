@@ -333,8 +333,8 @@ div.query-outer-wrapper #console {
   height: 23em;
 }
 
-p.console.fixed-console {
-  height: 36px;
+p.cypherdoc-console.fixed-console {
+  height: 0;
   margin-bottom: 36px;
   width: 100%;
 }

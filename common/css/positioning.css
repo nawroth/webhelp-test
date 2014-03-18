@@ -12,6 +12,10 @@
   overflow-x: visible;
 }
 
+body.console-is-expanded #header {
+  display: none;
+}
+
 #header h1 {
   margin: 8px 200px 0 8px;
   position: fixed;
@@ -24,6 +28,20 @@
   right: 0;
   top: 0;
   padding: 6px 0 5px 10px;
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 280px;
+  bottom: 0;
+  overflow: auto;
+}
+
+body.toc-is-hidden #sidebar-wrapper,
+body.console-is-expanded #sidebar-wrapper {
+  display: none;
 }
 
 #leftnavigation {
@@ -47,17 +65,23 @@
 }
 
 #content {
-  position: relative;
-  top: 90px;
-  right: auto;
-  bottom: 20px;
+  position: fixed;
+  top: 100px;
+  left: 280px;
+  right: 0;
+  bottom: 0;
   width: auto;
   height: inherit;
-  padding: 0 30px 5px 5px;
+  padding: 0 30px 5px 15px;
   border-left: 1px solid #cccccc;
   overflow: scroll;
   overflow-x: hidden;
   z-index: 1000;
+}
+
+body.toc-is-hidden #content,
+body.console-is-expanded #content {
+  left: 0;
 }
 
 #navheader {

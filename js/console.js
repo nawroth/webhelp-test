@@ -93,6 +93,7 @@ function CypherConsole(config, ready) {
             }, 'stop': function (event, ui) {
                 $resizeOverlay.detach();
                 latestResizeAmount = ui.size.height - ui.originalSize.height;
+                $context.css('width', 'auto');
             }, 'resize': function (event, ui) {
                 if (!$resizeIcon.hasClass(RESIZE_OUT_ICON)) {
                     $contentMoveSelector.css('top', ui.size.height + expandHeightCorrection);
@@ -116,12 +117,12 @@ function CypherConsole(config, ready) {
             } else {
                 expandEventHandlers.beforeUnexpand();
                 if (latestResizeAmount) {
-                    $context.height(latestResizeAmount);
+                    //$context.height(latestResizeAmount);
                 }
                 $resizeIcon.removeClass(RESIZE_IN_ICON).addClass(RESIZE_OUT_ICON);
                 $iframeWrapper.removeClass('fixed-console');
                 $context.removeClass('fixed-console');
-                $contentMoveSelector.css('top', 0);
+                $contentMoveSelector.css('top', 100); // TODO
                 $iframeWrapper.resizable('option', 'alsoResize', $context);
                 //$gistForm.css('margin-right', 0);
                 expandEventHandlers.afterUnexpand();

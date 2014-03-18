@@ -88,6 +88,7 @@ function createCypherConsoles( $ )
       'afterUnexpand' : afterUnexpand
     } );
     var $consoleWrapper = $( '#console-wrapper' );
+    /*
     window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
     {
       $cypherdocConsole.css( 'display', 'inline' );
@@ -103,13 +104,12 @@ function createCypherConsoles( $ )
         $content.css( 'top', $consoleWrapper.height() + 5 ).css( 'height', 'inherit' );
       }
     } );
+    */
   } );
 
   function beforeExpand()
   {
-    tocWasOpen = !window.webhelpLayout.state.west.isClosed;
-    window.webhelpLayout.hide( 'west' );
-    window.webhelpLayout.hide( 'north' );
+    $('body').addClass('console-is-expanded');
   }
 
   function afterExpand()
@@ -118,8 +118,7 @@ function createCypherConsoles( $ )
   
   function afterUnexpand()
   {
-    window.webhelpLayout.show( 'north' );
-    window.webhelpLayout.show( 'west', tocWasOpen );
+    $('body').removeClass('console-is-expanded');
   }
 
   function getUrl( database, command, message )

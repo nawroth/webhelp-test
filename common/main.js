@@ -14,109 +14,12 @@ $( document ).ready( function()
   $( '<div id="sidebar-wrapper"/>' ).insertAfter( $content ).load( 'webhelp-tree.html', initialize );
   if ( $content.length > 0 )
   {
-    var layout = prepareLayout();
-    layout.show( 'north', true );
-    $( '#showHideButton' ).click( function( event )
-    {
-      event.preventDefault();
-      if ( !layout.state.west.isHidden )
-      {
-        layout.toggle( 'west' );
-      }
-    } );
-    if ( layout.state.west.isHidden )
-    {
-      layout.show( 'west', false );
-    }
-    window.webhelpLayout = layout;
-    prepareLayoutEventHandlers();
+    $( "#showHideButton" ).click(function(){
+      $( 'body' ).toggleClass( 'toc-is-hidden' );
+      return false;
+    });
   }
 } );
-
-function prepareLayout()
-{
-  return $( 'body' ).layout( {
-    // Defining panes
-    west__paneSelector : "#sidebar-wrapper",
-    north__paneSelector : "#header",
-    center__paneSelector : "#content",
-
-    // some resizing/toggling settings
-    // OVERRIDE the pane-default of 'resizable=true'
-    north__resizable : false,
-    north__spacing_open : 0,
-    // no resizer-bar when open (zero height)
-    west__slideable : false,
-    west__spacing_closed : 6,
-    west__spacing_open : 4,
-    // some pane-size settings
-    west__minSize : 280,
-    north__minSize : 99,
-    // some pane animation settings
-    west__animatePaneSizing : false,
-    west__fxSpeed_size : "normal",
-    west__fxSpeed_open : 10,
-    west__fxSettings_open : {
-      easing : ""
-    },
-    west__fxName_close : "none",
-    // automatic cookie load & save enabled by default
-    stateManagement__enabled : true,
-    stateManagement__cookie__name : "sidebar_state",
-
-    onclose_end : window.layoutEventReactor.trigger( 'close' ),
-    onopen_end : window.layoutEventReactor.trigger( 'open' ),
-    onhide_end : window.layoutEventReactor.trigger( 'hide' ),
-    onshow_end : window.layoutEventReactor.trigger( 'show' ),
-    onresize_end : window.layoutEventReactor.trigger( 'resize' )
-  } );
-}
-
-function prepareLayoutEventHandlers()
-{
-    $( '#header' ).css( 'z-index', 2000 );
-    window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
-    {
-      $( 'body' ).css( 'overflow-y', 'auto' );
-      $( '#content' ).css( 'position', 'fixed' ).css( 'height', 'inherit' );
-    } );
-    window.layoutEventReactor.add( 'north', 'open', function( element, state, options, layoutName )
-    {
-      $( 'body' ).css( 'overflow-y', 'hidden' );
-      $( '#content' ).css( 'position', 'absolute' );
-      $( '#header' ).css( 'z-index', 2000 );
-    } );
-}
-
-window.layoutEventReactor = new EventReactor();
-
-function EventReactor()
-{
-  var map = {};
-  this.add = function( name, type, handler )
-  {
-    var key = name + '=' + type;
-    if (!(key in map))
-    {
-      map[key] = [];
-    }
-    var list = map[key];
-    list.push( handler );
-  }
-  this.trigger = function( type )
-  {
-    return function( name, element, state, options, layoutName )
-    {
-      var key = name + '=' + type;
-      if (!(key in map)) return;
-      var list = map[key];
-      for ( var i = 0; i < list.length; i++ )
-      {
-        list[i]( element, state, options, layoutName );
-      }
-    }
-  }
-}
 
 function initialize()
 {
@@ -392,57 +295,6 @@ function syncToc( a_ )
  * var tvCookie2 = treeviewCookie.substring(i + 1); var newTVCookie = tvCookie1 + "1" + tvCookie2;
  * $.cookie(treeCookieId, newTVCookie); } }
  */
-
-/**
- * Code for Show/Hide TOC
- * 
- */
-function showHideToc()
-{
-  var showHideButton = $( "#showHideButton" );
-  var leftNavigation = $( "#sidebar" ); // hide the parent div of
-  // leftnavigation, ie sidebar
-  var content = $( "#content" );
-  var animeTime = 75;
-
-  if ( showHideButton != undefined && showHideButton.hasClass( "pointLeft" ) )
-  {
-    // Hide TOC
-    showHideButton.removeClass( 'pointLeft' ).addClass( 'pointRight' );
-
-    if ( noAnimations )
-    {
-      leftNavigation.css( "display", "none" );
-      content.css( "margin", "125px 0 0 0" );
-    }
-    else
-    {
-      leftNavigation.hide( animeTime );
-      content.animate( {
-        "margin-left" : 0
-      }, animeTime );
-    }
-    showHideButton.attr( "title", "Show Sidebar" );
-  }
-  else
-  {
-    // Show the TOC
-    showHideButton.removeClass( 'pointRight' ).addClass( 'pointLeft' );
-    if ( noAnimations )
-    {
-      content.css( "margin", "125px 0 0 280px" );
-      leftNavigation.css( "display", "block" );
-    }
-    else
-    {
-      content.animate( {
-        "margin-left" : '280px'
-      }, animeTime );
-      leftNavigation.show( animeTime );
-    }
-    showHideButton.attr( "title", "Hide Sidebar" );
-  }
-}
 
 /**
  * Code for search highlighting

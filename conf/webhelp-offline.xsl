@@ -304,8 +304,6 @@
     </script>
     <script type="text/javascript" src="{$webhelp.common.dir}jquery/treeview/jquery.treeview.min.js">
     </script>
-    <script type="text/javascript" src="{$webhelp.common.dir}jquery/layout/jquery.layout.min.js">
-    </script>
 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
