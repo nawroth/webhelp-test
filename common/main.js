@@ -14,10 +14,31 @@ $( document ).ready( function()
   $( '<div id="sidebar-wrapper"/>' ).insertAfter( $content ).load( 'webhelp-tree.html', initialize );
   if ( $content.length > 0 )
   {
-    $( "#showHideButton" ).click(function(){
-      $( 'body' ).toggleClass( 'toc-is-hidden' );
+    var $body = $( 'body' );
+    var SIDEBAR_COOKIE_NAME = 'manual_toc_visible';
+    function setSidebarCookie( value )
+    {
+      $.cookie( SIDEBAR_COOKIE_NAME, value, { expires: 3, path: '/' } );
+    }
+    if ( $.cookie( SIDEBAR_COOKIE_NAME ) === 'no' )
+    {
+      $body.addClass( 'toc-is-hidden' );
+    }
+    
+    $( "#showHideButton" ).click( function()
+    {
+      if ( $body.hasClass( 'toc-is-hidden' ) )
+      {
+        $body.removeClass( 'toc-is-hidden' );
+        setSidebarCookie( 'yes' );
+      }
+      else
+      {
+        $body.addClass( 'toc-is-hidden' );
+        setSidebarCookie( 'no' );
+      }
       return false;
-    });
+    } );
   }
 } );
 
