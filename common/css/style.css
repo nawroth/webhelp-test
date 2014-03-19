@@ -273,7 +273,7 @@ div.admonitionblock td.content b {
 
 #content div.sidebar, #content div.titlepage div.abstract {
   float: right;
-  margin: 0 0 4px 4px;
+  margin: 0 0 16px 16px;
   padding: 4px;
 }
 
