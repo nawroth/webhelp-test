@@ -105,6 +105,8 @@ function CypherConsole(config, ready) {
         var contextHeight = 0;
         var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {
             if ($resizeIcon.hasClass(RESIZE_OUT_ICON)) {
+                contextHeight = parseInt($context.height(),10);
+                $context.height(0);
                 expandEventHandlers.beforeExpand();
                 $resizeIcon.removeClass(RESIZE_OUT_ICON).addClass(RESIZE_IN_ICON);
                 $iframeWrapper.addClass('fixed-console');
@@ -116,9 +118,7 @@ function CypherConsole(config, ready) {
                 expandEventHandlers.afterExpand();
             } else {
                 expandEventHandlers.beforeUnexpand();
-                if (latestResizeAmount) {
-                    //$context.height(latestResizeAmount);
-                }
+                $context.height(contextHeight + (latestResizeAmount ? latestResizeAmount : 0));
                 $resizeIcon.removeClass(RESIZE_IN_ICON).addClass(RESIZE_OUT_ICON);
                 $iframeWrapper.removeClass('fixed-console');
                 $context.removeClass('fixed-console');
