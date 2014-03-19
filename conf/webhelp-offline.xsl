@@ -9,6 +9,7 @@
   <xsl:import href="syntaxhighlight.xsl"/>
   <xsl:import href="xhtml-table.xsl"/>
   <xsl:import href="xhtml-admon.xsl"/>
+  <xsl:import href="xhtml-titlepage.xsl"/>
   <xsl:import href="footer.xsl"/>
 
 <!-- 

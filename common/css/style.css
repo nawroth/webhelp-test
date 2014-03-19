@@ -271,6 +271,20 @@ div.admonitionblock td.content b {
   display: block;
 }
 
+#content div.sidebar, #content div.titlepage div.abstract {
+  float: right;
+  margin: 0 0 4px 4px;
+  padding: 4px;
+}
+
+li>p {
+  margin: 0;
+}
+
+hr {
+  border-top: 0 none;
+}
+
 span.contentsTab {
   padding-left: 0;
   background: none;

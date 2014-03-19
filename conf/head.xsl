@@ -47,6 +47,8 @@
     $admonblocks.filter('.Important').find('td.content').addClass('alert alert-warning');
     $admonblocks.filter('.Caution').find('td.content').addClass('alert alert-warning');
     $admonblocks.filter('.Warning').find('td.content').addClass('alert alert-danger');
+    $('div.sidebar', $content).addClass('alert alert-info');
+    $('#content div.titlepage div.abstract').addClass('alert alert-info');
   });
 </script>
 
