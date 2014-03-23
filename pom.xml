@@ -214,11 +214,13 @@
                   <targetPath>${project.build.directory}/docbkx/webhelp/css</targetPath>
                   <preservePath>true</preservePath>
                 </resource>
+                <!-- 
                 <resource>
                   <directory>${docs.tools}/main/resources/js</directory>
                   <targetPath>${project.build.directory}/docbkx/webhelp/js</targetPath>
                   <preservePath>true</preservePath>
                 </resource>
+                 -->
                 <resource>
                   <directory>${project.basedir}/src/docbkx/images</directory>
                   <targetPath>${project.build.directory}/docbkx/webhelp/images</targetPath>

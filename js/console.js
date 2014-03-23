@@ -23,6 +23,7 @@ function CypherConsole(config, ready) {
 
     var $IFRAME = $('<iframe/>').attr('id', 'console').addClass('cypherdoc-console');
     var $IFRAME_WRAPPER = $('<div/>').attr('id', 'console-wrapper');
+    var $IFRAME_INNER_WRAPPER = $('<div/>').attr('id', 'console-inner-wrapper');
     var RESIZE_OUT_ICON = 'fa-expand';
     var RESIZE_IN_ICON = 'fa-compress';
     var $RESIZE_BUTTON = $('<a class="btn btn-xs btn-primary resize-toggle"><i class="fa ' + RESIZE_OUT_ICON + '"></i></a>');
@@ -80,16 +81,17 @@ function CypherConsole(config, ready) {
         });
         $context.empty();
         var $iframeWrapper = $IFRAME_WRAPPER.clone();
-        $iframeWrapper.append($iframe);
+        var $innerWrapper = $IFRAME_INNER_WRAPPER.clone().appendTo($iframeWrapper);
+        $innerWrapper.append($iframe);
         var $contentMoveSelector = $(contentMoveSelector).first();
         $context.append($iframeWrapper);
         $context.css('background', 'none');
         var latestResizeAmount = 0;
-        var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($iframeWrapper).mousedown(function (event) {
+        var $verticalResizeButton = $RESIZE_VERTICAL_BUTTON.clone().appendTo($innerWrapper).mousedown(function (event) {
             event.preventDefault();
         });
         $iframeWrapper.resizable({'handles': {'s': $verticalResizeButton}, 'alsoResize': $context, 'minHeight': 80, 'start': function () {
-                $resizeOverlay.appendTo($iframeWrapper);
+                $resizeOverlay.appendTo($innerWrapper);
             }, 'stop': function (event, ui) {
                 $resizeOverlay.detach();
                 latestResizeAmount = ui.size.height - ui.originalSize.height;
@@ -103,7 +105,7 @@ function CypherConsole(config, ready) {
 
         //var $gistForm = $('#gist-form');
         var contextHeight = 0;
-        var $resizeButton = $RESIZE_BUTTON.clone().appendTo($iframeWrapper).click(function () {
+        var $resizeButton = $RESIZE_BUTTON.clone().appendTo($innerWrapper).click(function () {
             if ($resizeIcon.hasClass(RESIZE_OUT_ICON)) {
                 contextHeight = parseInt($context.height(),10);
                 $context.height(0);

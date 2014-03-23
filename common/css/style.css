@@ -308,8 +308,6 @@ p.cypherconsole {
 }
 
 iframe.console,#console {
-  width: 80em;
-  max-width: 95%;
   height: 23em;
   display: block;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -318,12 +316,8 @@ iframe.console,#console {
 #console {
   top: 0;
   left: 0;
-  width: 99.7%;
-  max-width: 99.7%;
-  z-index: 1000;
-}
-
-#console {
+  right: 0;
+  z-index: 1005;
   height: 100%;
   width: 100%;
 }
@@ -335,12 +329,18 @@ div.query-outer-wrapper #console {
 #console-wrapper {
   left: 0;
   top: 0;
+  right: 0;
   width: 100%;
-  z-index: 1000;
+  height: 100%;
+  z-index: 1003;
+  position: static;
+  overflow: visible;
 }
 
-#console-wrapper {
+#console-inner-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 #console-wrapper,p.console,iframe.console {
