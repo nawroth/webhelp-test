@@ -87,7 +87,7 @@ function createCypherConsoles( $ )
       'afterExpand' : afterExpand,
       'afterUnexpand' : afterUnexpand
     } );
-    var $consoleWrapper = $( '#console-wrapper' );
+    //var $consoleWrapper = $( '#console-wrapper' );
     /*
     window.layoutEventReactor.add( 'north', 'close', function( element, state, options, layoutName )
     {

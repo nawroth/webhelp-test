@@ -145,7 +145,7 @@
           <xsl:with-param name="nav.context" select="$nav.context"/ -->
         <div id="navLinks">
           <span>
-            <a id="showHideButton" href="#" class="pointLeft" tabindex="5" title="Show/Hide TOC tree"><i class="fa fa-columns"></i> Sidebar
+            <a id="showHideButton" href="#" class="pointLeft" tabindex="5" title="Show/Hide TOC tree"><i class="fa fa-columns"></i> Contents
             </a>
           </span>
           <xsl:if
