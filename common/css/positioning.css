@@ -51,7 +51,6 @@ body.console-is-expanded #sidebar-wrapper {
   bottom: 0;
   left: 0;
   width: inherit;
-  z-index: 1500;
   padding: 1px;
 }
 
@@ -61,7 +60,6 @@ body.console-is-expanded #sidebar-wrapper {
   top: 136px;
   bottom: 0;
   left: 0;
-  z-index: 1500;
 }
 
 #content {
@@ -76,7 +74,6 @@ body.console-is-expanded #sidebar-wrapper {
   border-left: 1px solid #cccccc;
   overflow: scroll;
   overflow-x: hidden;
-  z-index: 1000;
 }
 
 body.toc-is-hidden #content,
